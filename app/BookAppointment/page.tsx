@@ -33,9 +33,11 @@ function BookAppointment() {
 
   return (
     <div className="flex">
+
       <div className="w-1/2 bg-white-cover bg-center">
-        <div className="w-full h-full bg-no-repeat bg-cover" style={{ background: `url('/assets/ProfileBackground.jpg')` }}></div>
+        <div className="w-[70&] h-[100%] border rounded-[5%] m-6 bg-no-repeat bg-cover bg-[url('/assets/ProfileBackground.jpg')]"></div>
       </div>
+
       <div className="w-[50%] p-8 bg-white">
         <h1 className="text-3xl font-extrabold text-center text-blue-950 font-sans">Book a Consultation and Take the First Step Toward Justice.</h1>
 
@@ -48,7 +50,7 @@ function BookAppointment() {
               name="name"
               value={clientData.name}
               onChange={handleClientChange}
-              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-75 italic"
+              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-90 italic"
               placeholder="Input Your First Name"
               required
             />
@@ -61,7 +63,7 @@ function BookAppointment() {
               name="email"
               value={clientData.email}
               onChange={handleClientChange}
-              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-75 italic"
+              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-90 italic"
               placeholder="Input Your Email Address"
               required
             />
@@ -74,13 +76,13 @@ function BookAppointment() {
               name="phoneNo"
               value={clientData.phoneNo}
               onChange={handleClientChange}
-              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-75 italic"
+              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-90 italic"
               placeholder="Input Your Phone Number"
               required
             />
           </div>
 
-          <p className="text-center text-gray-700 italic pt-2">Appointment Details</p>
+          <p className="text-center text-gray-800 italic pt-2">Appointment Details</p>
           <div className="mb-4">
             <label className="block mb-2 font-extrabold text-gray-900">Date</label>
             <input
@@ -88,7 +90,7 @@ function BookAppointment() {
               name="date"
               value={appointmentData.date}
               onChange={handleAppointmentChange}
-              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-75 italic"
+              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-90 italic"
               placeholder="Select a preferred date"
               required
             />
@@ -101,7 +103,7 @@ function BookAppointment() {
               name="time"
               value={appointmentData.time}
               onChange={handleAppointmentChange}
-              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-75 italic"
+              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-90 italic"
               placeholder="Select a preferred time"
               required
             />
@@ -114,13 +116,13 @@ function BookAppointment() {
               name="lawyer"
               value={appointmentData.lawyer}
               onChange={handleAppointmentChange}
-              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-75 italic"
+              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-90 italic"
               placeholder="Select a preferred lawyer"
               required
             />
           </div>
 
-          <p className="text-center text-gray-700 italic pt-2">Payment Details</p>
+          <p className="text-center text-gray-800 italic pt-2">Payment Details</p>
           <div className="mb-4 pt-4">
             <label htmlFor="payment" className="text-slate-700 ">
               Choose a payment method
@@ -128,7 +130,7 @@ function BookAppointment() {
             <select
               id="payment"
               name="payment"
-              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-75 italic"
+              className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-90 italic"
               value={appointmentData.payment}
               onChange={handleAppointmentChange}
               required>
@@ -147,7 +149,7 @@ function BookAppointment() {
             </select>
           </div>
 
-          <p className="text-center text-gray-700 italic pt-4">
+          <p className="text-center text-gray-800 italic pt-4">
             <label htmlFor="notes">Additional Notes</label>
           </p>
           <textarea
@@ -155,7 +157,7 @@ function BookAppointment() {
             id="notes"
             rows={5}
             cols={50}
-            className="px-8 py-2 w-full border rounded border-solid border-gray-300 placeholder-slate-400 placeholder-opacity-100 italic"
+            className="px-8 py-2 w-full border rounded border-solid border-gray-300 placeholder-slate-400 placeholder-opacity-90 italic"
             placeholder="Add any specific details about your case">
             {appointmentData.notes}
           </textarea>
