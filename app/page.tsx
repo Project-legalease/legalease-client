@@ -5,6 +5,7 @@ import Intro from "@/components/home/intro";
 import LookingForLawyer from "@/components/home/looking";
 import GotQuestions from "@/components/home/questions";
 import WhatIsLegalEase from "@/components/home/what-is-legal-ease";
+import Copyright from "@/components/layout/copyright";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function Home() {
       <LookingForLawyer />
       <LawyerExpertise />
       <ClientFeedback />
+      <Copyright />
     </main>
   );
 }
