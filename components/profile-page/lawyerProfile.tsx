@@ -7,12 +7,12 @@ function LawyerSection() {
   const [lawyer, setLawyer] = useState({
     name: "",
     location: "",
-    practiceAreas: [""],
-    languages: [""],
+    practiceAreas: [],
+    languages: [],
     experience: "",
     education: "",
     barAdmissions: "",
-    professionalMemberships: [""],
+    professionalMemberships: [],
     contact: {
       email: "",
       phone: "",
@@ -34,46 +34,39 @@ function LawyerSection() {
         email: "pennTony@yahoo.com",
         phone: "+123456789",
       },
-      bio: "With over 10 years of experience, I have established myself as a dedicated and compassionate lawyer...",
+      bio: "With over 10 years of experience, I have established myself as a dedicated and compassionate lawyer, committed to delivering exceptional legal services to individuals and families. My expertise spans a range of practice areas, with a particular focus on criminal law.",
     };
-    
+
     setLawyer(fetchedData);
   }, []);
 
   return (
-    <div className="flex h-1/3 w-full">
-      <div className="flex flex-row w-1/3">
-        <div className="bg-[url('/images/lawyer-profile.png')] w-32 h-32 rounded-full object-cover"></div>
-        <div className="flex mt-4 gap-1 items-center">
-          <FaStar className="text-primary-blue48" />
-          <FaStar className="text-primary-blue48" />
-          <FaStar className="text-primary-blue48" />
-          <FaStar className="text-primary-blue48" />
-          <FaRegStar className="text-primary-whiteF5" />
+    <div className="flex w-full p-3">
+      <div className="flex flex-col items-center w-1/3">
+        <div className="bg-[url('/images/lawyer-profile.png')] w-full h-96 bg-cover object-fit:cover bg-cover"></div>
+        <div className="flex mt-2 gap-3">
+          <FaStar className="text-primary-blue48 w-[1.5rem] h-[1.5rem]" />
+          <FaStar className="text-primary-blue48 w-[1.5rem] h-[1.5rem]" />
+          <FaStar className="text-primary-blue48 w-[1.5rem] h-[1.5rem]" />
+          <FaStar className="text-primary-blue48 w-[1.5rem] h-[1.5rem]" />
+          <FaRegStar className="text-primary-dark32 w-[1.5rem] h-[1.5rem]" />
         </div>
       </div>
-      <div className="flex flex-row w-2/3">
-        <h2>{lawyer.name}</h2>
-        <h4>{lawyer.location}</h4>
-        <div className="flex flex-row gap-2">
-          {lawyer.practiceAreas.map((area, index) => (
-            <span key={index}>{area}</span>
-          ))}
-          {lawyer.languages.map((language, index) => (
-            <span key={index}>{language}</span>
-          ))}
-          <span>{lawyer.experience}</span>
-          <span>{lawyer.education}</span>
-          <span>{lawyer.barAdmissions}</span>
-          {lawyer.professionalMemberships.map((membership, index) => (
-            <span key={index}>{membership}</span>
-          ))}
-          <div className="flex flex-row gap-2">
-            <span>{lawyer.contact.email}</span>
-            <span>{lawyer.contact.phone}</span>
-          </div>
-        </div>
-        <p>{lawyer.bio}</p>
+
+      <div className="flex flex-col w-2/3 ml-4">
+        <h2 className="text-xl font-bold italic">{lawyer.name}</h2>
+        <h4 className="text-sm italic">{lawyer.location}</h4>
+        <span className="text-sm"><strong>Practice Areas:</strong> {lawyer.practiceAreas.join(", ")}</span>
+        <span className="text-sm"><strong>Languages:</strong> {lawyer.languages.join(", ")}</span>
+        <span className="text-sm"><strong>Experience: </strong> {lawyer.experience}</span>
+        <span className="text-sm"><strong>Education: </strong> {lawyer.education}</span>
+        <span className="text-sm"><strong>Bar Admissions:</strong> {lawyer.barAdmissions}</span>
+        <span className="text-sm"><strong>Professional Memberships:</strong> {lawyer.professionalMemberships.join(", ")}</span>
+
+        <span className="text-sm"><strong>Email:</strong> {lawyer.contact.email}</span>
+        <span className="text-sm"><strong>Phone:</strong> {lawyer.contact.phone}</span>
+
+        <p className="mt-4 text-md font-semibold">{lawyer.bio}</p>
       </div>
     </div>
   );
