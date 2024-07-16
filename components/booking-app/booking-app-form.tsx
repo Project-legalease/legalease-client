@@ -117,13 +117,14 @@ function BookingAppForm(): React.JSX.Element {
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-2 
-        max-w-1xl
+        max-w-lg
         sm:max-w-lg 
         w-full 
         sm:w-full 
         rounded-lg
         fade-in-30
-        px-20"
+        px-8
+        mx-10"
         >
           <div>
             <h2 className="text-3xl text-primary-blue48 font-lilita mt-4 w-[500px]">Book a Consultation and Take the First Step Toward Justice.</h2>
@@ -264,20 +265,20 @@ function BookingAppForm(): React.JSX.Element {
                         <Button
                           variant={"outline"}
                           className={cn(
-                            "w-[240px] pl-3 text-left font-normal",
+                            "w-[450px] pl-3 text-left  border border-primary-dark32/70 focus-visible:outline-none focus:outline-none",
                             !field.value && "text-muted-foreground"
                           )}
                         >
                           {field.value ? (
                             format(field.value, "PPP")
                           ) : (
-                            <span>Selected a preferred date</span>
+                            <span className="text-black/50 font-normal">Selected a preferred date</span>
                           )}
                           <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                         </Button>
                       </FormControl>
                     </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
+                    <PopoverContent className="w-auto p-2" align="start">
                       <Calendar
                         mode="single"
                         selected={field.value}
