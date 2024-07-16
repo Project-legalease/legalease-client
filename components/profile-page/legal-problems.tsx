@@ -29,11 +29,13 @@ function LegalProblemSection() {
           </div>
         </div>
         <div className="flex gap-4 mb-8">
-          <div className="bg-[url('/images/book-appointment-bg.png')] opacity-10 bg-cover z-0"></div>
-          <button className="bg-primary-orange61 text-primary-whiteF5 px-4 py-2 rounded">Book Appointment</button>
-          <Link href={"/checkout-cv"} className="text-primary-orange61 px-4 py-2">
-            Check out my C.V
-          </Link>
+          <div className="absolute top-0 left-0 bg-[url('/images/book-appointment-bg.png')] opacity-10 bg-cover z-0"></div>
+          <div className="relative z-10">
+            <button className="bg-primary-orange61 text-primary-whiteF5 px-4 py-2 rounded">Book Appointment</button>
+            <Link href={"/checkout-cv"} className="text-primary-orange61 px-4 py-2">
+              Check out my C.V
+            </Link>
+          </div>
         </div>
       </div>
       <div className="bg-[url('/images/book-appointment-bg2.png')] w-3/5"></div>
