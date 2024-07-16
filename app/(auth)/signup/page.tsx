@@ -1,6 +1,7 @@
 import SignupForm from "@/components/auth/signup";
 import { ArrowRight } from "lucide-react";
 import { Metadata } from "next";
+import { ScrollArea } from "@/components/ui/scroll-area"
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 function SignUp() {
   return (
-    <div className="min-h-screen w-full p-8 bg-primary-whiteF5 drop-shadow-xl">
+    <ScrollArea className="h-screen w-full p-8 bg-primary-whiteF5 drop-shadow-xl">
       <div className="flex items-center gap-1 text-base text-primary-dark32/80 text-center font-inria">
         <p className="border-b border-transparent">Already have an account?</p>
         <Link
@@ -22,7 +23,7 @@ function SignUp() {
         </Link>
       </div>
       <SignupForm />
-    </div>
+    </ScrollArea>
   );
 }
 
