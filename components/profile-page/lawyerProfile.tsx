@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -7,12 +8,12 @@ function LawyerSection() {
   const [lawyer, setLawyer] = useState({
     name: "",
     location: "",
-    practiceAreas: [],
-    languages: [],
+    practiceAreas: [""],
+    languages: [""],
     experience: "",
     education: "",
     barAdmissions: "",
-    professionalMemberships: [],
+    professionalMemberships: [""],
     contact: {
       email: "",
       phone: "",
@@ -41,9 +42,9 @@ function LawyerSection() {
   }, []);
 
   return (
-    <div className="flex w-full p-3">
-      <div className="flex flex-col items-center w-1/3">
-        <div className="bg-[url('/images/lawyer-profile.png')] w-full h-96 bg-cover object-fit:cover bg-cover"></div>
+    <div className="flex flex-col md:flex-row w-full p-3">
+      <div className="flex flex-col items-center w-full md:w-1/3">
+        <div className="bg-[url('/images/lawyer-profile.png')] w-full h-96 bg-cover"></div>
         <div className="flex mt-2 gap-3">
           <FaStar className="text-primary-blue48 w-[1.5rem] h-[1.5rem]" />
           <FaStar className="text-primary-blue48 w-[1.5rem] h-[1.5rem]" />
@@ -53,7 +54,7 @@ function LawyerSection() {
         </div>
       </div>
 
-      <div className="flex flex-col w-2/3 ml-4">
+      <div className="flex flex-col w-full md:w-2/3 mt-4 md:mt-0 md:ml-4">
         <h2 className="text-xl font-bold italic">{lawyer.name}</h2>
         <h4 className="text-sm italic">{lawyer.location}</h4>
         <span className="text-sm"><strong>Practice Areas:</strong> {lawyer.practiceAreas.join(", ")}</span>
@@ -73,3 +74,4 @@ function LawyerSection() {
 }
 
 export default LawyerSection;
+

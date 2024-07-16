@@ -7,7 +7,7 @@ function PracticeArea() {
   return (
     <div className="flex flex-col mt-0 py-0">
       <h3 className="text-[40px] text-center text-primary-blue48 font-lilita mt-10">PRACTICE AREAS</h3>
-      <div className="grid grid-cols-3 gap-[0.1rem] h-[100px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[0.1rem] h-auto">
         <div className="bg-gray-200 p-4 rounded flex flex-col justify-center">
           <div className="flex justify-center items-center gap-3">
             <GiInjustice className="w-[3rem] h-[2rem]" />
