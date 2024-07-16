@@ -41,10 +41,10 @@ function FeaturedLawyers(): React.JSX.Element {
   return (
     <div className="py-5 px-5 mb-10">
       <div className="w-full max-w-6xl mx-auto">
-        <h1 className="font-lilita text-primary-blue48 text-[2.5em] text-center">
+        <h1 className="font-lilita text-primary-blue48 text-[2.5em]">
           OUR FEATURED LAWYERS
         </h1>
-        <h6 className="text-primary-dark1E font-extralight italic mb-8 text-center">
+        <h6 className="text-primary-dark1E font-extralight italic mb-8">
           The most frequently searched and the most popular Lawyers on the
           platform
         </h6>

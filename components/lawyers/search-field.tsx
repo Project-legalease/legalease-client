@@ -7,7 +7,7 @@ function SearchField(): React.JSX.Element {
   const [loading, setLoading] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
   return (
-    <div className="hidden sm:flex items-start justify-center gap-2 w-full max-w-lg">
+    <div className="hidden md:flex items-start justify-center gap-2 w-full max-w-lg">
       <div className="w-full border border-primary-orange61 flex items-center gap-3 bg-white rounded-lg px-2.5 py-4">
         <IoSearch size={16} className="text-black/50 mr-1" />
         <input

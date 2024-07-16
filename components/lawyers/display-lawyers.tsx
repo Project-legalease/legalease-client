@@ -16,7 +16,7 @@ export default function DisplayLawyers(): React.JSX.Element {
           Look no further!
         </p>
         <SearchField />
-        <div className="block sm:hidden">
+        <div className="block md:hidden">
           <FilterSearch />
         </div>
       </section>
