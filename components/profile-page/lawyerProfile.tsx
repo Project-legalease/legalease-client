@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { FaStar, FaRegStar } from "react-icons/fa6";
 
-function LawyerProfile() {
+function LawyerSection() {
   const [lawyer, setLawyer] = useState({
     name: "",
     location: "",
@@ -79,4 +79,4 @@ function LawyerProfile() {
   );
 }
 
-export default LawyerProfile;
+export default LawyerSection;
