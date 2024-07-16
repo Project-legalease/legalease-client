@@ -17,6 +17,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import Link from "next/link";
 
 const formSchema = z.object({
   firstName: z
@@ -269,8 +270,14 @@ export default function SignupForm(): React.JSX.Element {
                   Accept terms and conditions
                 </FormLabel>
                 <FormDescription className="text-primary-dark32/80 font-light">
-                  By creating an account, you agree to Terms of Services.
-                  We&#39;ll occassionally send account related emails.
+                  By creating an account, you agree to{" "}
+                  <Link
+                    href="#"
+                    className="underline decoration-primary-dark1E/20 hover:decoration-primary-dark32 font-medium duration-300"
+                  >
+                    Terms of Services
+                  </Link>
+                  . We&#39;ll occassionally send account related emails.
                 </FormDescription>
               </div>
               <FormMessage />
