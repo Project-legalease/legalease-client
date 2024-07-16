@@ -3,6 +3,17 @@
   @tailwind utilities;
 
   @layer base {
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1; 
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #323332; 
+      border-radius: 20px;
+    }
+    
     :root {
       --background: 0 0% 100%;
       --foreground: 222.2 84% 4.9%;
@@ -64,6 +75,7 @@
       @apply border-border;
       margin: 0;
       box-sizing: border-box;
+      scroll-behaviour: smooth;
     }
     body {
       @apply bg-background text-foreground;

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Carousel,
   CarouselContent,
@@ -5,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { usePathname } from "next/navigation";
 
 const featured: { img: string; desc: string }[] = [
   {
@@ -34,9 +37,10 @@ const featured: { img: string; desc: string }[] = [
 ];
 
 function FeaturedLawyers(): React.JSX.Element {
+  const pathname = usePathname();
   return (
     <div className="py-5 px-5 mb-10">
-      <div className="w-full max-w-[1184px] mx-auto">
+      <div className="w-full max-w-6xl mx-auto">
         <h1 className="font-lilita text-primary-blue48 text-[2.5em] text-center">
           OUR FEATURED LAWYERS
         </h1>
@@ -62,8 +66,14 @@ function FeaturedLawyers(): React.JSX.Element {
                   className="relative z-0 h-[508px] rounded-[20px]  bg-center bg-no-repeat bg-cover overflow-hidden"
                   style={{ backgroundImage: `url(${feature.img})` }}
                 >
-                  <div className="absolute z-[1] bottom-0 bg-black/55 py-6 px-5 text-white text-sm font-medium rounded-t-[20px]">
-                    <p>{feature.desc}</p>
+                  <div className="absolute z-[1] bottom-0 left-0 right-0 bg-black/55 py-6 px-5 text-white text-sm font-medium rounded-t-[20px]">
+                    {pathname.startsWith("/lawyers/find") ? (
+                      <button className="w-full px-4 py-4 bg-primary-orange61/85 hover:bg-primary-orange61 text-sm text-white border border-primary-orange61/85 hover:border-primary-orange61 font-medium rounded-lg duration-300">
+                        View Profile
+                      </button>
+                    ) : (
+                      <p>{feature.desc}</p>
+                    )}
                   </div>
                 </div>
               </CarouselItem>

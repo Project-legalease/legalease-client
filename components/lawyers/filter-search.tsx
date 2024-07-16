@@ -51,7 +51,7 @@ const formSchema = z.object({
   fees: z.string({ required_error: "Location is required" }).trim(),
 });
 
-export default function FilterBy(): React.JSX.Element {
+export default function FilterSearch(): React.JSX.Element {
   const [loading, setLoading] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
