@@ -1,7 +1,11 @@
-"use client";
-
 import React from "react";
 import LawyerProfile from "@/components/profile-page/profile-page";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Lawyer'sProfile | LegalEase",
+  description: "Making legal access easy",
+};
 
 function ProfilePage() {
   return (

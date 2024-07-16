@@ -1,3 +1,4 @@
+"use client";
 
 import React from 'react'
 import LawyerSection from './lawyerProfile'
