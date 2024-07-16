@@ -43,7 +43,7 @@ function LawyerSection() {
   return (
     <div className="flex w-full p-3">
       <div className="flex flex-col items-center w-1/3">
-        <div className="bg-[url('/images/lawyer-profile.png')] w-full h-96 bg-cover object-fit:cover bg-cover"></div>
+        <div className="bg-[url('/images/lawyer-profile.png')] w-full h-96 bg-cover object-fit:cover"></div>
         <div className="flex mt-2 gap-3">
           <FaStar className="text-primary-blue48 w-[1.5rem] h-[1.5rem]" />
           <FaStar className="text-primary-blue48 w-[1.5rem] h-[1.5rem]" />
