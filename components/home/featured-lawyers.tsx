@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
 const featured: { img: string; desc: string }[] = [
@@ -41,10 +42,20 @@ function FeaturedLawyers(): React.JSX.Element {
   return (
     <div className="py-5 px-5 mb-10">
       <div className="w-full max-w-6xl mx-auto">
-        <h1 className="font-lilita text-primary-blue48 text-[2.5em]">
+        <h1
+          className={cn(
+            "font-lilita text-primary-blue48 text-[2.5em]",
+            pathname.startsWith("/lawyers/find") ? "pl-5" : "text-center"
+          )}
+        >
           OUR FEATURED LAWYERS
         </h1>
-        <h6 className="text-primary-dark1E font-extralight italic mb-8">
+        <h6
+          className={cn(
+            "text-primary-dark1E font-extralight italic mb-8",
+            pathname.startsWith("/lawyers/find") ? "pl-5" : "text-center"
+          )}
+        >
           The most frequently searched and the most popular Lawyers on the
           platform
         </h6>
@@ -59,7 +70,12 @@ function FeaturedLawyers(): React.JSX.Element {
             {featured.map((feature, index) => (
               <CarouselItem
                 key={index}
-                className="md:basis-1/2 lg:basis-1/3 pl-4 lg:pl-7"
+                className={cn(
+                  "md:basis-1/2 pl-4 lg:pl-7",
+                  pathname.startsWith("/lawyers/find")
+                    ? "lg:basis-1/2"
+                    : "lg:basis-1/3"
+                )}
               >
                 <div
                   key={index}

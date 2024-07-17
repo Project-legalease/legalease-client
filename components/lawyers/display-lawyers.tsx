@@ -4,8 +4,8 @@ import SearchField from "./search-field";
 
 export default function DisplayLawyers(): React.JSX.Element {
   return (
-    <div className="max-w-6xl w-full ">
-      <section className="w-fit">
+    <div className="w-full">
+      <section className="w-fit pl-10">
         <h2 className="uppercase text-4xl text-primary-blue48 font-lilita">
           FIND THE RIGHT LAWYER FOR YOU
         </h2>
