@@ -15,13 +15,12 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-
 
 const formSchema = z.object({
   name: z
@@ -112,7 +111,7 @@ function BookingAppForm(): React.JSX.Element {
   }
 
   return (
-    <div className="w-1/2 bg-white-cover bg-center m-0">
+    <div className="w-full lg:w-1/2 bg-white-cover bg-center m-0">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -265,7 +264,7 @@ function BookingAppForm(): React.JSX.Element {
                         <Button
                           variant={"outline"}
                           className={cn(
-                            "w-[450px] pl-3 text-left  border border-primary-dark32/70 focus-visible:outline-none focus:outline-none",
+                            "w-full pl-3 text-left border border-primary-dark32/70 focus-visible:outline-none focus:outline-none",
                             !field.value && "text-muted-foreground"
                           )}
                         >
