@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 function BookAppointment() {
   return (
-    <div className="min-h-screen w-full p-2 bg-primary-whiteF5 drop-shadow-xl">
+    <div className="min-h-screen w-full p-2 bg-white drop-shadow-xl">
       <Booking />
     </div>
   );

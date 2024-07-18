@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ApplyAsALawyer from "@/components/apply-as-a-lawyer/applyAsLawyer";
+import Apply from "@/components/apply-as-a-lawyer/apply";
 
 export const metadata: Metadata = {
   title: "Apply As A Lawyer | LegalEase",
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ApplyAsALawyer />;
+  return <Apply />;
 }
