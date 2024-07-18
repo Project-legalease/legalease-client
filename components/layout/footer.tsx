@@ -22,6 +22,8 @@ const footerData: { title: string; links: { text: string; href: string }[] }[] =
         { text: "Support", href: "/contact" },
         { text: "Privacy Policy", href: "#" },
         { text: "Terms And Conditions", href: "#" },
+        { text: "User Agreement", href: "#" },
+        { text: "Cookie Policy", href: "#" },
         { text: "Community Guidelines", href: "#" },
       ],
     },
