@@ -2,7 +2,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
-
 function LegalProblemSection() {
   const [testimonyIndex, setTestimonyIndex] = useState<number>(0);
 
@@ -16,7 +15,8 @@ function LegalProblemSection() {
             <p>
               <RiDoubleQuotesL size={24} />
               &quot;I could not be more pleased with the service I received from Anthony. He was professional, knowledgeable, and always available to
-            answer my questions. I highly recommend him for anyone needing legal assistance in family business matters&quot;<RiDoubleQuotesR size={24} className="float-end" />
+              answer my questions. I highly recommend him for anyone needing legal assistance in family business matters&quot;
+              <RiDoubleQuotesR size={24} className="float-end" />
             </p>
             <cite className="block mt-2 text-left text-primary-dark32 italic">- Christiana Charles</cite>
           </div>
@@ -34,7 +34,9 @@ function LegalProblemSection() {
         </div>
         <div className="flex justify-center mx-6 rounded-lg gap-4 mb-8 bg-black bg-opacity-50 bg-cover z-0 h-[70px] w-full md:w-[500px] bg-[url('/images/book-appointment-bg.png')]">
           <div className="relative z-10 py-4 px-0">
-            <button className="bg-primary-orange61 text-primary-whiteF5 px-4 py-2 rounded font-bold">Book Appointment</button>
+            <Link href="/booking-app">
+              <button className="bg-primary-orange61 text-primary-whiteF5 px-4 py-2 rounded font-bold">Book Appointment</button>
+            </Link>
             <Link href={"/checkout-cv"} className="text-primary-orange61 px-4 py-2 underline italic">
               Check out my C.V
             </Link>

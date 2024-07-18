@@ -4,57 +4,26 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const formSchema = z.object({
-  name: z
-    .string({ required_error: "Name is required" })
-    .min(1, "Name is required")
-    .trim(),
-  email: z
-    .string({ required_error: "Email is required" })
-    .min(1, "Email is required")
-    .email({ message: "Invalid email address" }),
-  phoneNo: z
-    .string({ required_error: "Phone Number is required" })
-    .min(1, "Phone Number is required")
-    .trim(),
-  date: z
-    .date({
-      required_error: "Date is required",
-    }),
-  time: z
-    .string({ required_error: "Time is required" })
-    .min(1, "Time is required")
-    .trim(),
-  lawyer: z
-    .string({ required_error: "Lawyer is required" })
-    .min(1, "Lawyer is required")
-    .trim(),
-  notes: z
-    .string({ required_error: "A note is required" })
-    .min(1, "A note is required")
-    .trim(),
-  payment: z
-    .string({ required_error: "Payment is required" })
-    .min(1, "Payment is required")
-    .trim(),
+  name: z.string({ required_error: "Name is required" }).min(1, "Name is required").trim(),
+  email: z.string({ required_error: "Email is required" }).min(1, "Email is required").email({ message: "Invalid email address" }),
+  phoneNo: z.string({ required_error: "Phone Number is required" }).min(1, "Phone Number is required").trim(),
+  date: z.date({
+    required_error: "Date is required",
+  }),
+  time: z.string({ required_error: "Time is required" }).min(1, "Time is required").trim(),
+  lawyer: z.string({ required_error: "Lawyer is required" }).min(1, "Lawyer is required").trim(),
+  notes: z.string({ required_error: "A note is required" }).min(1, "A note is required").trim(),
+  payment: z.string({ required_error: "Payment is required" }).min(1, "Payment is required").trim(),
 });
 
 const lawyers = [
@@ -123,8 +92,7 @@ function BookingAppForm(): React.JSX.Element {
         rounded-lg
         fade-in-30
         px-8
-        mx-10"
-        >
+        mx-10">
           <div>
             <h2 className="text-3xl text-primary-blue48 font-lilita mt-4 w-[500px]">Book a Consultation and Take the First Step Toward Justice.</h2>
           </div>
@@ -198,9 +166,7 @@ function BookingAppForm(): React.JSX.Element {
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue
-                        placeholder="Select a preferred time"
-                      />
+                      <SelectValue placeholder="Select a preferred time" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -266,13 +232,8 @@ function BookingAppForm(): React.JSX.Element {
                           className={cn(
                             "w-full pl-3 text-left border border-primary-dark32/70 focus-visible:outline-none focus:outline-none",
                             !field.value && "text-muted-foreground"
-                          )}
-                        >
-                          {field.value ? (
-                            format(field.value, "PPP")
-                          ) : (
-                            <span className="text-black/50 font-normal">Selected a preferred date</span>
-                          )}
+                          )}>
+                          {field.value ? format(field.value, "PPP") : <span className="text-black/50 font-normal">Selected a preferred date</span>}
                           <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                         </Button>
                       </FormControl>
@@ -282,9 +243,7 @@ function BookingAppForm(): React.JSX.Element {
                         mode="single"
                         selected={field.value}
                         onSelect={field.onChange}
-                        disabled={(date) =>
-                          date > new Date() || date < new Date("1900-01-01")
-                        }
+                        disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
                         initialFocus
                       />
                     </PopoverContent>
@@ -305,9 +264,7 @@ function BookingAppForm(): React.JSX.Element {
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue
-                        placeholder="Select a preferred payment method"
-                      />
+                      <SelectValue placeholder="Select a preferred payment method" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -341,11 +298,13 @@ function BookingAppForm(): React.JSX.Element {
             )}
           />
           <div className="flex items-center justify-end gap-2 mt-4 mb-10">
-            <button
-              type="submit"
-              className="w-fit px-4 py-2 text-white text-sm bg-primary-orange61/85 rounded-md hover:bg-primary-orange61 duration-300">
-              {loading ? "Loading..." : "Book Appointment"}
-            </button>
+            <Link href="/payment">
+              <button
+                type="submit"
+                className="w-fit px-4 py-2 text-white text-sm bg-primary-orange61/85 rounded-md hover:bg-primary-orange61 duration-300">
+                {loading ? "Loading..." : "Book Appointment"}
+              </button>
+            </Link>
           </div>
         </form>
       </Form>

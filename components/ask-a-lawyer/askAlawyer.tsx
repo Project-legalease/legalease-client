@@ -12,6 +12,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import Link from "next/link";
 
 const formSchema = z.object({
   question: z
@@ -58,6 +59,7 @@ export default function AskALawyer(): React.JSX.Element {
               </li>
               <li>
                 <span className="text-primary-orange61 font-bold">Explore Our Existing Q&As:</span> Discover answers to previously asked questions from individuals facing similar legal challenges.
+                <Link href="/about" className="text-primary-orange61 underline italic">Visit FAQS&apos;s</Link>
               </li>
             </ul>
             </div>

@@ -14,7 +14,7 @@ function Intro() {
             Make legal assistance easy
           </p>
           <Link
-            href="#"
+            href="/about"
             className="py-3 px-4 rounded-lg bg-primary-orange61 font-bold text-white mt-[22px] font-inria"
           >
             Learn More
