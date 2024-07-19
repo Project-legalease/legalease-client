@@ -35,9 +35,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${lilita.variable} ${inria.variable}`}
       >
-        <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );
