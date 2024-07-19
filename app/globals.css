@@ -1,6 +1,6 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
   @layer base {
     ::-webkit-scrollbar {
@@ -82,3 +82,8 @@
       font-family: var(--font-inter);
     }
   }
+  @layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
