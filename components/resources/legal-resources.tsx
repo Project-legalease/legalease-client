@@ -46,7 +46,7 @@ function LegalResources(): React.JSX.Element {
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-5 max-w-md sm:max-w-md py-10 w-full sm:w-3/5 px-6 rounded-lg mx-auto fade-in-30">
         <div>
-          <h2 className="text-3xl text-primary-blue48 font-lilita mt-20">Add Legal Resources</h2>
+          <h2 className="text-3xl text-center text-primary-blue48 font-lilita mt-5">Add Legal Resources</h2>
         </div>
         {!!error && (
           <div className="relative w-full rounded-lg border px-4 py-3 text-sm border-destructive/50 text-destructive flex items-center gap-2">
@@ -59,7 +59,7 @@ function LegalResources(): React.JSX.Element {
           name="title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-primary-dark32/80 font-normal">Title:</FormLabel>
+              <FormLabel className="text-primary-dark32 font-bold">Title:</FormLabel>
               <FormControl>
                 <input
                   placeholder="Enter resource title"
@@ -76,7 +76,7 @@ function LegalResources(): React.JSX.Element {
           name="content"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-primary-dark32/80 font-normal">Your Email:</FormLabel>
+              <FormLabel className="text-primary-dark32 font-bold">Your Email:</FormLabel>
               <FormControl>
                 <input
                   placeholder="Enter resource content"
@@ -93,7 +93,7 @@ function LegalResources(): React.JSX.Element {
           name="category"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-primary-dark32/80 font-normal">Category:</FormLabel>
+              <FormLabel className="text-primary-dark32 font-bold">Category:</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl>
                     <SelectTrigger>
@@ -115,7 +115,7 @@ function LegalResources(): React.JSX.Element {
         <div className="flex items-center justify-end gap-2 mt-4 mb-10">
           <button
             type="submit"
-            className="w-fit px-4 py-2 text-white text-sm bg-primary-orange61/85 rounded-md hover:bg-primary-orange61 duration-300">
+            className="w-fit px-4 py-2 text-white font-bold text-sm bg-primary-orange61/85 rounded-md hover:bg-primary-orange61 duration-300">
             {loading ? "Loading..." : "Add Resource"}
           </button>
         </div>
