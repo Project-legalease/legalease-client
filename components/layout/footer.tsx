@@ -9,9 +9,10 @@ const footerData: { title: string; links: { text: string; href: string }[] }[] =
       title: "Browse Our Platform",
       links: [
         { text: "Find A Lawyer", href: "/lawyers/find" },
-        { text: "Ask A Lawyer", href: "#" },
-        { text: "Apply As A Lawyer", href: "#" },
-        { text: "Register As A Lawyer", href: "#" },
+        { text: "Ask A Lawyer", href: "/lawyers/ask" },
+        { text: "Register As A Lawyer", href: "/signup?role=lawyer" },
+        { text: "Register As A User", href: "/signup?role=user" },
+
         { text: "Research The Law", href: "#" },
       ],
     },

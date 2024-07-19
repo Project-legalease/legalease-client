@@ -48,7 +48,7 @@ function GotQuestions() {
             ))}
             <div className="mt-7 pl-10">
               <Link
-                href="/ask-a-lawyer"
+                href="/lawyers/ask"
                 className="py-3 px-4 rounded-lg bg-primary-orange61 font-bold text-white  font-inria"
               >
                 Ask A Lawyer

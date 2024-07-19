@@ -1,4 +1,4 @@
-import AskALawyer from "@/components/ask-a-lawyer/askAlawyer";
+import AskALawyer from "@/components/lawyers/ask-a-lawyer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

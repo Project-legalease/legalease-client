@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Metadata } from "next";
 import { ScrollArea } from "@/components/ui/scroll-area"
 import Link from "next/link";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Create an account | LegalEase",
@@ -22,7 +23,9 @@ function SignUp() {
           <ArrowRight className="text-primary-dark1E size-3 inline" />
         </Link>
       </div>
-      <SignupForm />
+      <Suspense>
+        <SignupForm />
+      </Suspense>
     </ScrollArea>
   );
 }

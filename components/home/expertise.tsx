@@ -16,10 +16,10 @@ function LawyerExpertise(): React.JSX.Element {
           solutions?
         </p>
         <Link
-          href="/apply-as-a-lawyer"
+          href="/signup?role=lawyer"
           className="py-3 px-4 rounded-lg bg-primary-orange61 font-bold text-white mt-[22px] font-inria"
         >
-          Apply As A Lawyer
+          Register As A Lawyer
         </Link>
       </div>
     </div>
