@@ -10,14 +10,12 @@ export default function AboutIntro(): React.JSX.Element {
           Committed to providing exceptional legal services and client
           satisfaction.
         </p>
-        <div className="my-4">
           <Link
             href="/login"
-            className="w-fit px-4 py-4 bg-primary-orange61/85 hover:bg-primary-orange61 text-sm text-white border border-primary-orange61/85 hover:border-primary-orange61 font-medium rounded-lg duration-300"
+            className="block w-fit px-4 py-4 my-5 mx-auto bg-primary-orange61/85 hover:bg-primary-orange61 text-sm text-white border border-primary-orange61/85 hover:border-primary-orange61 font-medium rounded-lg duration-300"
           >
             Get Started
           </Link>
-        </div>
       </div>
     </div>
   );

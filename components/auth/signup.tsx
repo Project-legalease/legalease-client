@@ -18,6 +18,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+
+const userTypes: ["user", "lawyer"] = ["user", "lawyer"];
 
 const formSchema = z.object({
   firstName: z
@@ -58,6 +61,7 @@ const formSchema = z.object({
 
 export default function SignupForm(): React.JSX.Element {
   const [error, setError] = useState("");
+  const [userType, setUserType] = useState<"user" | "lawyer">("user")
   const [pwdInputType, setPwdInputType] = useState<"password" | "text">(
     "password"
   );
@@ -114,7 +118,6 @@ export default function SignupForm(): React.JSX.Element {
   return (
     <Form {...form}>
       <form
-        onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-5 max-w-md sm:max-w-md py-10 w-full px-6 rounded-lg mx-auto fade-in-30"
       >
         <div>
@@ -124,6 +127,18 @@ export default function SignupForm(): React.JSX.Element {
           <p className="mt-0 text-center text-primary-dark32 italic font-normal text-sm">
             Signup to get a LegalEase profile
           </p>
+          <div className="flex gap-2 p-1 rounded-md bg-white border border-primary-orange61 mt-4">
+            {
+              userTypes.map((user, index) => (
+                <button key={index} type="button"
+                  onClick={() => setUserType(user)}
+                  className={cn("w-full capitalize px-4 py-2 text-sm rounded-md duration-300", userType == user ? "bg-primary-orange61 text-white" : "bg-transparent text-primary-dark32")}
+                >
+                  {user}
+                </button>
+              ))
+            }
+          </div>
         </div>
         {!!error && (
           <div className="relative w-full rounded-lg border px-4 py-3 text-sm border-destructive/50 text-destructive flex items-center gap-2">
@@ -285,8 +300,7 @@ export default function SignupForm(): React.JSX.Element {
           )}
         />
         <div className="flex items-center gap-2 mt-4">
-          <button
-            type="submit"
+          <button onClick={form.handleSubmit(onSubmit)}
             className="w-full px-4 py-2 text-white text-sm bg-primary-orange61/85 rounded-md hover:bg-primary-orange61 duration-300"
           >
             {loading ? "Loading..." : "Signup"}

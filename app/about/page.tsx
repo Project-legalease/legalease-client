@@ -1,7 +1,8 @@
-import FAQs from "@/components/about/faq";
+import FAQs from "@/components/about/faqs";
 import AboutIntro from "@/components/about/intro";
 import Mission from "@/components/about/mission";
 import { Metadata } from "next";
+import Newsletter from "@/components/home/newsletter"
 
 export const metadata: Metadata = {
   title: "About Us | LegalEase",
@@ -14,6 +15,7 @@ export default function Page() {
       <AboutIntro />
       <Mission />
       <FAQs />
+      <Newsletter />
     </>
   );
 }
