@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Lilita_One, Inria_Sans } from "next/font/google";
 import "normalize.css/normalize.css";
 import "./globals.css";
-import Header from "@/components/layout/header";
-import Footer from "@/components/layout/footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const lilita = Lilita_One({

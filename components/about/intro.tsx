@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function AboutIntro(): React.JSX.Element {
   return (
-    <div className="relative z-0 flex flex-col items-center gap-4 py-[70px] px-6 font-inria bg-[url('/images/about-bg.png')] bg-center bg-no-repeat bg-cover">
+    <div className="relative z-0 flex flex-col items-center gap-4 py-[70px] px-6 font-inria bg-[url('/images/about-bg.jpg')] bg-center bg-no-repeat bg-cover">
       <div className="absolute z-[1] top-0 right-0 left-0 bottom-0 bg-black/45"></div>
       <div className="relative z-[2] text-center max-w-lg w-full">
         <h1 className="text-[40px] text-white font-lilita">ABOUT US</h1>
