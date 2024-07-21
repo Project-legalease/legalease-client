@@ -16,7 +16,7 @@ export default function NotFound({
         height={400}
         alt="Page not found"
       />
-      <h3 className="font-lilita text-xl text-primary-blue48 text-center mt-1 w-full max-w-lg">
+      <h3 className="font-lilita text-`xl text-primary-blue48 text-center mt-1 w-full max-w-lg">
         We can&#39;t seem to find the page you&#39;re looking for
       </h3>
 
