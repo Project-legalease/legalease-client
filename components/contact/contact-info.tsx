@@ -10,7 +10,7 @@ const contacts: { label: string; value: string }[] = [
 export default function ContactInfo(): React.JSX.Element {
   return (
     <div className="w-fullw-2/5 bg-[url('/images/contact-bg.png')] bg-cover bg-center bg-no-repeat px-6 font-inria">
-      <h2 className="text-3xl text-white font-lilita mt-20">
+      <h2 className="text-3xl text-white font-lilita mt-10 md:mt-20">
         Contact Information
       </h2>
       <p className="text-white italic font-normal text-sm">

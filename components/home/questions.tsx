@@ -18,15 +18,15 @@ function GotQuestions() {
   return (
     <div className="bg-primary-whiteF5 px-5 py-[56px]">
       <div className="w-full max-w-[1184px] mx-auto">
-        <h1 className="font-lilita text-primary-blue48 text-[2.5em] mb-2">
+        <h1 className="font-lilita text-primary-blue48 text-3xl sm:text-[2.5em] mb-2">
           GOT QUESTIONS FOR A LEGAL PRACTITIONER ?
         </h1>
         <div className="flex items-start gap-5">
           <div className="w-full mb-16">
-            <h1 className="font-lilita text-primary-orange61 text-[2.5em]">
+            <h1 className="font-lilita text-primary-orange61 text-3xl sm:text-[2.5em]">
               We Have Answers!
             </h1>
-            <h6 className="text-primary-dark1E text-xl font-light italic mb-8">
+            <h6 className="text-primary-dark1E text-sm sm:text-base md:text-xl font-light italic mb-8">
               Lawyers across the country have answered many user questions on
               LegalEase. Get answers today in our Q&A forum.
             </h6>
@@ -55,7 +55,7 @@ function GotQuestions() {
               </Link>
             </div>
           </div>
-          <div className="w-full">
+          <div className="hidden md:block w-full">
             <Image
               src="/images/bg-4.png"
               alt="someone pressing phone"

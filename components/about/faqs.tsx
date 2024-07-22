@@ -58,7 +58,7 @@ export function FAQRow({ data } : {data: QuestionsProps}): React.JSX.Element {
   return (
     <AccordionItem value={data.question}>
       <AccordionTrigger>
-        <span className="pl-2 pr-10 text-primary-dark1E">{data.question}</span>
+        <span className="pl-2 pr-10 text-primary-dark1E text-left">{data.question}</span>
       </AccordionTrigger>
       <AccordionContent className="px-3 text-primary-dark32">
         {data.answer}

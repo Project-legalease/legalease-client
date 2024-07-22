@@ -1,15 +1,14 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { LuUser2, LuCalendarDays } from "react-icons/lu";
 import { CustomDate } from "@/lib/date"
-import { HiOutlineChatBubbleOvalLeftEllipsis } from "react-icons/hi2";
 import { FaRegBell } from "react-icons/fa";
 import MobileDashboardNav from "./mobile-nav";
 
 export default function DashboardHeader(): React.JSX.Element {
   return (
-    <header className="sticky top-0 md:relative bg-primary-whiteF5 rounded-[20px] px-6 sm:px-10 py-5 md:py-9 font-inria mb-10 md:shadow-lg border md:border-none">
-      <div className="w-full flex items-center justify-between mx-auto">
-        <div className="w-full flex items-center">
+    <header className="sticky top-0 z-10 pt-8 md:pt-16 bg-white">
+      <div className="w-full flex items-center justify-between mx-auto bg-primary-whiteF5 rounded-[20px] px-6 sm:px-10 py-5 md:py-9 font-inria md:shadow-lg border">
+        <div className="w-full md:w-fit flex items-center">
           <MobileDashboardNav />
           <div className="w-fit h-fit rounded-full size-[42px] relative z-0">
             <Avatar className="size-[42px]">
@@ -37,9 +36,9 @@ export default function DashboardHeader(): React.JSX.Element {
             <FaRegBell className="text-primary-dark1E" />
             <div className="absolute z-[1] top-0 right-0 size-2 rounded-full bg-rose-600"></div>
           </div>
-          <div className="w-fit h-fit rounded-full size-[35px] p-2 bg-black/5">
+          {/* <div className="w-fit h-fit rounded-full size-[35px] p-2 bg-black/5">
             <HiOutlineChatBubbleOvalLeftEllipsis className="text-primary-dark1E " />
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

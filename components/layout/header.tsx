@@ -20,7 +20,7 @@ function Header(): JSX.Element {
     <nav className="sticky top-0 z-20 px-4 bg-primary-whiteF5 border-b border-primary-dark32/15">
       <div className="flex items-center justify-between max-w-[980px] w-full mx-auto h-[100px]">
         <SubHeader />
-        <div className="hidden sm:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-2">
           <Link
             href="/login"
             className="w-fit flex items-center gap-1 bg-primary-orange61 py-2 px-4 rounded-lg shadow-md text-sm text-white"

@@ -9,7 +9,7 @@ const contents: { text: string; link: string }[] = [
 
 export default function PoliciesFooter(): React.JSX.Element {
   return (
-    <div className="flex items-center justify-center gap-4 p-5">
+    <div className="flex items-center justify-center gap-4 flex-wrap text-xs sm:text-base p-5">
       {contents.map((content, index) => (
         <Link
           key={index}

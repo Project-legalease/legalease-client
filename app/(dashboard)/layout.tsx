@@ -13,11 +13,11 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex h-screen overflow-hidden max-w-[1512px] mx-auto">
       <NavView />
-      <div className="w-full px-2 sm:px-8 md:px-16 py-8 md:py-16 overflow-y-auto">
+      <div className="w-full px-2 sm:px-8 md:px-10 overflow-y-auto">
         <DashboardHeader />
-        <div className="px-3">{children}</div>
+        <div className="px-3 pt-10">{children}</div>
       </div>
     </div>
   );

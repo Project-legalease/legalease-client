@@ -55,7 +55,7 @@ export default function Footer(): React.JSX.Element {
   return (
     // Suggested code may be subject to a license. Learn more: ~LicenseLog:3147620777.
     <div className="bg-primary-dark1E px-5 pt-20 text-white">
-      <div className="flex gap-x-6 justify-between  flex-wrap w-full max-w-7xl mx-auto">
+      <div className="flex gap-6 justify-between  flex-wrap w-full max-w-7xl mx-auto">
         {footerData.map((data, index) => (
           <div key={index} className="">
             <h5 className="text-2xl font-lilita text-primary-orange61">

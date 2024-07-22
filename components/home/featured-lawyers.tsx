@@ -44,7 +44,7 @@ function FeaturedLawyers(): React.JSX.Element {
       <div className="w-full max-w-6xl mx-auto">
         <h1
           className={cn(
-            "font-lilita text-primary-blue48 text-[2.5em]",
+            "font-lilita text-primary-blue48 text-3xl sm:text-[2.5em]",
             pathname.startsWith("/lawyers/find") ? "pl-5" : "text-center"
           )}
         >
@@ -52,7 +52,7 @@ function FeaturedLawyers(): React.JSX.Element {
         </h1>
         <h6
           className={cn(
-            "text-primary-dark1E font-extralight italic mb-8",
+            "text-primary-dark1E font-extralight font-sm sm:font-base italic mb-8",
             pathname.startsWith("/lawyers/find") ? "pl-5" : "text-center"
           )}
         >
@@ -64,7 +64,7 @@ function FeaturedLawyers(): React.JSX.Element {
             align: "start",
             // loop: true,
           }}
-          className="w-full"
+          className="w-4/5 mx-auto"
         >
           <CarouselContent>
             {featured.map((feature, index) => (

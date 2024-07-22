@@ -37,7 +37,7 @@ export default function DashboardNav(): React.JSX.Element {
     { text: "Home", href: `/dashboard/${user}`, Icon: GrHomeRounded },
     {
       text: "Appointments",
-      href: `/`,
+      href: `/dashboard/${user}/appointments`,
       Icon: RiCalendarScheduleLine,
     },
     user == "lawyer"
@@ -47,13 +47,11 @@ export default function DashboardNav(): React.JSX.Element {
           Icon: GrGroup,
         }
       : null,
-    user == "lawyer"
-      ? {
-          text: "Cases",
-          href: `/dashboard/lawyer/cases`,
-          Icon: GrArchive,
-        }
-      : null,
+    {
+      text: "Cases",
+      href: `/dashboard/${user}/cases`,
+      Icon: GrArchive,
+    },
     {
       text: "Messages",
       href: `/dashboard/${user}/messages`,
@@ -73,18 +71,18 @@ export default function DashboardNav(): React.JSX.Element {
             priority={true}
           />
         </div>
-        <h1 className="text-2xl md:text-4xl font-semibold text-primary-orange61 font-gorditas">
+        <h1 className="text-2xl font-semibold text-primary-orange61 font-gorditas">
           LEGALEASE
         </h1>
       </div>
-      <div className="w-full flex items-center justify-end gap-4 p-5">
+      <div className="w-full flex md:hidden items-center justify-end gap-4 p-5">
         <div className="w-fit h-fit rounded-full size-[35px] p-2 bg-black/5 relative z-0">
           <FaRegBell className="text-primary-dark1E" />
           <div className="absolute z-[1] top-0 right-0 size-2 rounded-full bg-rose-600"></div>
         </div>
-        <div className="w-fit h-fit rounded-full size-[35px] p-2 bg-black/5">
+        {/* <div className="w-fit h-fit rounded-full size-[35px] p-2 bg-black/5">
           <HiOutlineChatBubbleOvalLeftEllipsis className="text-primary-dark1E " />
-        </div>
+        </div> */}
       </div>
       <div className="h-full flex flex-col justify-between">
         <div className="space-y-2">

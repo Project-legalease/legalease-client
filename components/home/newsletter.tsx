@@ -58,10 +58,10 @@ export default function Newsletter(): React.JSX.Element {
 
   return (
     <div className="px-6 py-20 mt-20 bg-primary-whiteF5">
-      <h2 className="uppercase text-4xl text-primary-orange61 font-lilita text-center">
+      <h2 className="uppercase text-3xl sm:text-4xl text-primary-orange61 font-lilita text-center">
         Get first hand updates from LegalEase
       </h2>
-      <p className="text-center text-primary-blue68 italic font-normal text-xl">
+      <p className="text-center text-primary-blue68 italic font-normal text-base sm:text-xl">
         Subscribe To Our Newsletter
       </p>
       <Form {...form}>
