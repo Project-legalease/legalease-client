@@ -15,9 +15,10 @@ export default function DashboardLayout({
   return (
     <div className="flex h-screen overflow-hidden">
       <NavView />
-      <div className="w-full px-16 py-16 overflow-y-auto">
+      <div className="w-full px-2 sm:px-8 md:px-16 py-8 md:py-16 overflow-y-auto">
         <DashboardHeader />
-        {children}</div>
+        <div className="px-3">{children}</div>
+      </div>
     </div>
   );
 }
