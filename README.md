@@ -77,60 +77,52 @@ export default CustomButton;
 
 ## File Structure
 
-legalease-client/
-├── app/
-│ ├── globals.css # Global CSS styles
-│ ├── layout.tsx # Main layout file
-│ ├── page.tsx # Main page component
-│ ├── about/ # About page components
-│ │ └── page.tsx # About page
-│ ├── contact/ # Contact page components
-│ │ └── page.tsx # Contact page
-│ ├── profile-page/ # Profile page components
-│ │ └── page.tsx # Profile page
-│ ├── appointment/ # Book Appointment page components
-│ │ └── page.tsx # Book Appointment page
-│ └── payment/ # Payment page component
-└── page.tsx # Payment page
-
-├── components/
-│ ├── auth/
-└── auth-form.tsx
-└── back-button.tsx
-└── login.tsx
-└── new-password.tsx
-└── reset-password.tsx
-└── signup.tsx
-│ ├── booking-app/
-└── booking-app-form.tsx
-└── booking-app-img.tsx
-└── booking.tsx
-│ ├── payment/
-└── payment-option.tsx
-│ ├── reviews/
-└── leave-feedback.tsx
-│ ├── services/
-└── services-menu.tsx
-
-├── public/
-│ └── images/
-│ └── ProfileBackground.jpg # Background image
-│ └── ask-a-lawyer.jpg
-│ └── bg-4.jpg
-│ └── bg-5.jpg
-│ └── feedback.jpg
-
-├── .gitignore # Git ignore file
-
-├── next.config.js # Next.js configuration file
-
-├── package.json # Package configuration file
-
-├── README.md # Project README file
-
-├── tailwind.config.js # TailwindCSS configuration file
-
-└── tsconfig.json # TypeScript configuration file
+legalease-client/  
+├── app/  
+│   ├── globals.css                # Global CSS styles  
+│   ├── layout.tsx                 # Main layout file  
+│   ├── page.tsx                   # Main page component  
+│   ├── about/                     # About page components  
+│   │   └── page.tsx               # About page  
+│   ├── contact/                   # Contact page components  
+│   │   └── page.tsx               # Contact page  
+│   ├── profile-page/              # Profile page components  
+│   │   └── page.tsx               # Profile page  
+│   ├── appointment/               # Book Appointment page components  
+│   │   └── page.tsx               # Book Appointment page  
+│   └── payment/                   # Payment page component  
+│       └── page.tsx               # Payment page  
+├── components/  
+│   ├── auth/  
+│   │   └── auth-form.tsx  
+│   │   └── back-button.tsx  
+│   │   └── login.tsx  
+│   │   └── new-password.tsx  
+│   │   └── reset-password.tsx  
+│   │   └── signup.tsx  
+│   ├── booking-app/  
+│   │   └── booking-app-form.tsx  
+│   │   └── booking-app-img.tsx  
+│   │   └── booking.tsx  
+│   ├── payment/  
+│   │   └── payment-option.tsx  
+│   ├── reviews/  
+│   │   └── leave-feedback.tsx  
+│   ├── services/  
+│       └── services-menu.tsx  
+├── public/  
+│   └── images/  
+│       └── ProfileBackground.jpg  # Background image  
+│       └── ask-a-lawyer.jpg  
+│       └── bg-4.jpg  
+│       └── bg-5.jpg  
+│       └── feedback.jpg  
+├── .gitignore                     # Git ignore file  
+├── next.config.js                 # Next.js configuration file  
+├── package.json                   # Package configuration file  
+├── README.md                      # Project README file  
+├── tailwind.config.js             # TailwindCSS configuration file  
+└── tsconfig.json                  # TypeScript configuration file  
 
 ## Styling
 
@@ -150,8 +142,8 @@ required
 
 ## Authors
 
-[Etomu Gbenga Joshua - CyberGa - etomu.joshua@gmail.com](mailto:etomu.joshua@gmail.com)
-[Obikwelu Chidera Jane - Deragsine96 - chidexobikwelu@gmail.com](mailto:etomu.joshua@mail.com)
+- **Etomu Gbenga Joshua** - *CyberGa* - [etomu.joshua@gmail.com](mailto:etomu.joshua@gmail.com)  
+- **Obikwelu Chidera Jane** - *Derasine96* - [chidexobikwelu@gmail.com](mailto:chidexobikwelu@gmail.com)
 
 ## License
 
