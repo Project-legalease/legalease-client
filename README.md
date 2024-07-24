@@ -21,14 +21,18 @@ npm (>= 6.x) or yarn (>= 1.22.x)
 
 ### Clone the repository
 
+```sh
 [git clone](https://github.com/Project-legalease/legalease-client.git)
 cd legalease-client
+```
 
 ### Install dependencies
 
 Using npm
 
+```sh
 npm install
+```
 
 ## Usage
 
@@ -38,7 +42,9 @@ To run the development server:
 
 Using npm
 
+```sh
 npm run dev
+```
 
 [Open http://localhost:3000 with your browser to see the result](http://localhost:3000)
 
@@ -48,7 +54,9 @@ To create a production build:
 
 Using npm
 
+```sh
 npm run build
+```
 
 ### Start
 
@@ -56,7 +64,9 @@ To start the application in production mode:
 
 Using npm
 
+```sh
 npm start
+```
 
 ## Components
 
@@ -79,53 +89,53 @@ export default CustomButton;
 
 legalease-client/  
 ├── app/  
-│   ├── globals.css                # Global CSS styles  
-│   ├── layout.tsx                 # Main layout file  
-│   ├── page.tsx                   # Main page component  
-│   ├── about/                     # About page components  
-│   │   └── page.tsx               # About page  
-│   ├── contact/                   # Contact page components  
-│   │   └── page.tsx               # Contact page  
-│   ├── profile-page/              # Profile page components  
-│   │   └── page.tsx               # Profile page  
-│   ├── appointment/               # Book Appointment page components  
-│   │   └── page.tsx               # Book Appointment page  
-│   └── payment/                   # Payment page component  
-│       └── page.tsx               # Payment page  
-|   └── ...  
+│ ├── globals.css # Global CSS styles  
+│ ├── layout.tsx # Main layout file  
+│ ├── page.tsx # Main page component  
+│ ├── about/ # About page components  
+│ │ └── page.tsx # About page  
+│ ├── contact/ # Contact page components  
+│ │ └── page.tsx # Contact page  
+│ ├── profile-page/ # Profile page components  
+│ │ └── page.tsx # Profile page  
+│ ├── appointment/ # Book Appointment page components  
+│ │ └── page.tsx # Book Appointment page  
+│ └── payment/ # Payment page component  
+│ └── page.tsx # Payment page  
+| └── ...  
 ├── components/  
-│   ├── auth/  
-│   │   └── auth-form.tsx  
-│   │   └── back-button.tsx  
-│   │   └── login.tsx  
-│   │   └── new-password.tsx  
-│   │   └── reset-password.tsx  
-│   │   └── signup.tsx  
-│   ├── booking-app/  
-│   │   └── booking-app-form.tsx  
-│   │   └── booking-app-img.tsx  
-│   │   └── booking.tsx  
-│   ├── payment/  
-│   │   └── payment-option.tsx  
-│   ├── reviews/  
-│   │   └── leave-feedback.tsx  
-│   ├── services/  
-│       └── services-menu.tsx  
-|   └── ...  
+│ ├── auth/  
+│ │ └── auth-form.tsx  
+│ │ └── back-button.tsx  
+│ │ └── login.tsx  
+│ │ └── new-password.tsx  
+│ │ └── reset-password.tsx  
+│ │ └── signup.tsx  
+│ ├── booking-app/  
+│ │ └── booking-app-form.tsx  
+│ │ └── booking-app-img.tsx  
+│ │ └── booking.tsx  
+│ ├── payment/  
+│ │ └── payment-option.tsx  
+│ ├── reviews/  
+│ │ └── leave-feedback.tsx  
+│ ├── services/  
+│ └── services-menu.tsx  
+| └── ...  
 ├── public/  
-│   └── images/  
-│       └── ProfileBackground.jpg  # Background image  
-│       └── ask-a-lawyer.jpg  
-│       └── bg-4.jpg  
-│       └── bg-5.jpg  
-│       └── feedback.jpg  
-        └── ...  
-├── .gitignore                     # Git ignore file  
-├── next.config.js                 # Next.js configuration file  
-├── package.json                   # Package configuration file  
-├── README.md                      # Project README file  
-├── tailwind.config.js             # TailwindCSS configuration file  
-└── tsconfig.json                  # TypeScript configuration file  
+│ └── images/  
+│ └── ProfileBackground.jpg # Background image  
+│ └── ask-a-lawyer.jpg  
+│ └── bg-4.jpg  
+│ └── bg-5.jpg  
+│ └── feedback.jpg  
+ └── ...  
+├── .gitignore # Git ignore file  
+├── next.config.js # Next.js configuration file  
+├── package.json # Package configuration file  
+├── README.md # Project README file  
+├── tailwind.config.js # TailwindCSS configuration file  
+└── tsconfig.json # TypeScript configuration file
 
 ## Styling
 
@@ -145,8 +155,8 @@ required
 
 ## Authors
 
-- **Etomu Gbenga Joshua** - *CyberGa* - [etomu.joshua@gmail.com](mailto:etomu.joshua@gmail.com)  
-- **Obikwelu Chidera Jane** - *Derasine96* - [chidexobikwelu@gmail.com](mailto:chidexobikwelu@gmail.com)
+- **Etomu Gbenga Joshua** - _CyberGa_ - [etomu.joshua@gmail.com](mailto:etomu.joshua@gmail.com)
+- **Obikwelu Chidera Jane** - _Derasine96_ - [chidexobikwelu@gmail.com](mailto:chidexobikwelu@gmail.com)
 
 ## License
 
