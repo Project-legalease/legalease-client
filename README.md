@@ -89,6 +89,7 @@ export default CustomButton;
 
 ## File Structure
 
+```sh
 legalease-client/  
 ├── app/  
 │ ├── globals.css       # Global CSS styles  
@@ -138,6 +139,7 @@ legalease-client/
 ├── README.md               # Project README file  
 ├── tailwind.config.js      # TailwindCSS configuration file  
 └── tsconfig.json           # TypeScript configuration file
+```
 
 ## Styling
 
@@ -145,6 +147,7 @@ This project uses TailwindCSS for styling. The TailwindCSS configuration is loca
 
 ## Example of TailwindCSS usage
 
+```sh
 <>
 type="text"  
 name="name"  
@@ -154,6 +157,7 @@ className="w-full px-10 py-2 border rounded border-solid border-black placeholde
 placeholder="Input Your First Name"  
 required  
 </>
+```
 
 ## Authors
 
