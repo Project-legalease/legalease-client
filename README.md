@@ -92,6 +92,7 @@ legalease-client/
 │   │   └── page.tsx               # Book Appointment page  
 │   └── payment/                   # Payment page component  
 │       └── page.tsx               # Payment page  
+|   └── ...  
 ├── components/  
 │   ├── auth/  
 │   │   └── auth-form.tsx  
@@ -110,6 +111,7 @@ legalease-client/
 │   │   └── leave-feedback.tsx  
 │   ├── services/  
 │       └── services-menu.tsx  
+|   └── ...  
 ├── public/  
 │   └── images/  
 │       └── ProfileBackground.jpg  # Background image  
@@ -117,6 +119,7 @@ legalease-client/
 │       └── bg-4.jpg  
 │       └── bg-5.jpg  
 │       └── feedback.jpg  
+        └── ...  
 ├── .gitignore                     # Git ignore file  
 ├── next.config.js                 # Next.js configuration file  
 ├── package.json                   # Package configuration file  
@@ -147,4 +150,4 @@ required
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
