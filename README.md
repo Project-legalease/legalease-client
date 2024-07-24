@@ -72,36 +72,38 @@ npm start
 
 An example of a reusable button component `CustomButton`:
 
-import Link from "next/link";
+```sh
+import Link from "next/link";  
 
 const CustomButton = ({ href, children }) => (
-`<Link href={href}>`
-`<button className="bg-primary-orange61 text-white text-semibold py-2 px-4 rounded-md">`
-{children}
-</button>
+`<Link href={href}>`  
+`<button className="bg-primary-orange61 text-white text-semibold py-2 px-4 rounded-md">`  
+{children}  
+</button>  
 
-  </Link>
-);
+  </Link>  
+);  
 
-export default CustomButton;
+export default CustomButton;  
+```  
 
 ## File Structure
 
 legalease-client/  
 ├── app/  
-│ ├── globals.css # Global CSS styles  
-│ ├── layout.tsx # Main layout file  
-│ ├── page.tsx # Main page component  
-│ ├── about/ # About page components  
-│ │ └── page.tsx # About page  
-│ ├── contact/ # Contact page components  
-│ │ └── page.tsx # Contact page  
-│ ├── profile-page/ # Profile page components  
-│ │ └── page.tsx # Profile page  
-│ ├── appointment/ # Book Appointment page components  
-│ │ └── page.tsx # Book Appointment page  
-│ └── payment/ # Payment page component  
-│ └── page.tsx # Payment page  
+│ ├── globals.css       # Global CSS styles  
+│ ├── layout.tsx        # Main layout file  
+│ ├── page.tsx          # Main page component  
+│ ├── about/            # About page components  
+│ │ └── page.tsx        # About page  
+│ ├── contact/          # Contact page components  
+│ │ └── page.tsx        # Contact page  
+│ ├── profile-page/     # Profile page components  
+│ │ └── page.tsx        # Profile page  
+│ ├── appointment/      # Book Appointment page components  
+│ │ └── page.tsx        # Book Appointment page  
+│ └── payment/          # Payment page component  
+│ └── page.tsx          # Payment page  
 | └── ...  
 ├── components/  
 │ ├── auth/  
@@ -124,18 +126,18 @@ legalease-client/
 | └── ...  
 ├── public/  
 │ └── images/  
-│ └── ProfileBackground.jpg # Background image  
+│ └── ProfileBackground.jpg         # Background image  
 │ └── ask-a-lawyer.jpg  
 │ └── bg-4.jpg  
 │ └── bg-5.jpg  
 │ └── feedback.jpg  
  └── ...  
-├── .gitignore # Git ignore file  
-├── next.config.js # Next.js configuration file  
-├── package.json # Package configuration file  
-├── README.md # Project README file  
-├── tailwind.config.js # TailwindCSS configuration file  
-└── tsconfig.json # TypeScript configuration file
+├── .gitignore              # Git ignore file  
+├── next.config.js          # Next.js configuration file  
+├── package.json            # Package configuration file  
+├── README.md               # Project README file  
+├── tailwind.config.js      # TailwindCSS configuration file  
+└── tsconfig.json           # TypeScript configuration file
 
 ## Styling
 
@@ -144,13 +146,13 @@ This project uses TailwindCSS for styling. The TailwindCSS configuration is loca
 ## Example of TailwindCSS usage
 
 <>
-type="text"
-name="name"
-value={clientData.name}
-onChange={handleClientChange}
-className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-90 italic"
-placeholder="Input Your First Name"
-required
+type="text"  
+name="name"  
+value={clientData.name}  
+onChange={handleClientChange}  
+className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-90 italic"  
+placeholder="Input Your First Name"  
+required  
 </>
 
 ## Authors
