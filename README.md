@@ -1,16 +1,28 @@
-# Legal Assistance Website
+# LEGALEASE CLIENT
 
-This is a web application for a legal assistance firm, built with Next.js and TailwindCSS. It allows users to book appointments with lawyers, view profiles, and contact the firm.
+Frontend implementations for the Legalease platform.  
+This is a web application for a legal assistance firm, built with Next.js and TailwindCSS.  
+It allows users to book appointments with lawyers, view profiles, and contact the firm.
 
 ## Table of Contents
 
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [File Structure](#file-structure)
-4. [Components](#components)
-5. [Styling](#styling)
-6. [Authors](#authors)
-7. [License](#license)
+- [LEGALEASE CLIENT](#legalease-client)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [Clone the repository](#clone-the-repository)
+    - [Install dependencies](#install-dependencies)
+  - [Usage](#usage)
+    - [Development](#development)
+    - [Build](#build)
+    - [Start](#start)
+  - [Components](#components)
+  - [File Structure](#file-structure)
+  - [Styling](#styling)
+  - [Example of TailwindCSS usage](#example-of-tailwindcss-usage)
+  - [Authors](#authors)
+  - [License](#license)
+  - [License](#license-1)
 
 ## Installation
 
@@ -73,71 +85,71 @@ npm start
 An example of a reusable button component `CustomButton`:
 
 ```sh
-import Link from "next/link";  
+import Link from "next/link";
 
 const CustomButton = ({ href, children }) => (
-`<Link href={href}>`  
-`<button className="bg-primary-orange61 text-white text-semibold py-2 px-4 rounded-md">`  
-{children}  
-</button>  
+`<Link href={href}>`
+`<button className="bg-primary-orange61 text-white text-semibold py-2 px-4 rounded-md">`
+{children}
+</button>
 
-  </Link>  
-);  
+  </Link>
+);
 
-export default CustomButton;  
-```  
+export default CustomButton;
+```
 
 ## File Structure
 
 ```sh
-legalease-client/  
-├── app/  
-│ ├── globals.css       # Global CSS styles  
-│ ├── layout.tsx        # Main layout file  
-│ ├── page.tsx          # Main page component  
-│ ├── about/            # About page components  
-│ │ └── page.tsx        # About page  
-│ ├── contact/          # Contact page components  
-│ │ └── page.tsx        # Contact page  
-│ ├── profile-page/     # Profile page components  
-│ │ └── page.tsx        # Profile page  
-│ ├── appointment/      # Book Appointment page components  
-│ │ └── page.tsx        # Book Appointment page  
-│ └── payment/          # Payment page component  
-│ └── page.tsx          # Payment page  
-| └── ...  
-├── components/  
-│ ├── auth/  
-│ │ └── auth-form.tsx  
-│ │ └── back-button.tsx  
-│ │ └── login.tsx  
-│ │ └── new-password.tsx  
-│ │ └── reset-password.tsx  
-│ │ └── signup.tsx  
-│ ├── booking-app/  
-│ │ └── booking-app-form.tsx  
-│ │ └── booking-app-img.tsx  
-│ │ └── booking.tsx  
-│ ├── payment/  
-│ │ └── payment-option.tsx  
-│ ├── reviews/  
-│ │ └── leave-feedback.tsx  
-│ ├── services/  
-│ └── services-menu.tsx  
-| └── ...  
-├── public/  
-│ └── images/  
-│ └── ProfileBackground.jpg         # Background image  
-│ └── ask-a-lawyer.jpg  
-│ └── bg-4.jpg  
-│ └── bg-5.jpg  
-│ └── feedback.jpg  
- └── ...  
-├── .gitignore              # Git ignore file  
-├── next.config.js          # Next.js configuration file  
-├── package.json            # Package configuration file  
-├── README.md               # Project README file  
-├── tailwind.config.js      # TailwindCSS configuration file  
+legalease-client/
+├── app/
+│ ├── globals.css       # Global CSS styles
+│ ├── layout.tsx        # Main layout file
+│ ├── page.tsx          # Main page component
+│ ├── about/            # About page components
+│ │ └── page.tsx        # About page
+│ ├── contact/          # Contact page components
+│ │ └── page.tsx        # Contact page
+│ ├── profile-page/     # Profile page components
+│ │ └── page.tsx        # Profile page
+│ ├── appointment/      # Book Appointment page components
+│ │ └── page.tsx        # Book Appointment page
+│ └── payment/          # Payment page component
+│ └── page.tsx          # Payment page
+| └── ...
+├── components/
+│ ├── auth/
+│ │ └── auth-form.tsx
+│ │ └── back-button.tsx
+│ │ └── login.tsx
+│ │ └── new-password.tsx
+│ │ └── reset-password.tsx
+│ │ └── signup.tsx
+│ ├── booking-app/
+│ │ └── booking-app-form.tsx
+│ │ └── booking-app-img.tsx
+│ │ └── booking.tsx
+│ ├── payment/
+│ │ └── payment-option.tsx
+│ ├── reviews/
+│ │ └── leave-feedback.tsx
+│ ├── services/
+│ └── services-menu.tsx
+| └── ...
+├── public/
+│ └── images/
+│ └── ProfileBackground.jpg         # Background image
+│ └── ask-a-lawyer.jpg
+│ └── bg-4.jpg
+│ └── bg-5.jpg
+│ └── feedback.jpg
+ └── ...
+├── .gitignore              # Git ignore file
+├── next.config.js          # Next.js configuration file
+├── package.json            # Package configuration file
+├── README.md               # Project README file
+├── tailwind.config.js      # TailwindCSS configuration file
 └── tsconfig.json           # TypeScript configuration file
 ```
 
@@ -149,13 +161,13 @@ This project uses TailwindCSS for styling. The TailwindCSS configuration is loca
 
 ```sh
 <>
-type="text"  
-name="name"  
-value={clientData.name}  
-onChange={handleClientChange}  
-className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-90 italic"  
-placeholder="Input Your First Name"  
-required  
+type="text"
+name="name"
+value={clientData.name}
+onChange={handleClientChange}
+className="w-full px-10 py-2 border rounded border-solid border-black placeholder-slate-400 placeholder-opacity-90 italic"
+placeholder="Input Your First Name"
+required
 </>
 ```
 
@@ -163,6 +175,8 @@ required
 
 - **Etomu Gbenga Joshua** - _CyberGa_ - [etomu.joshua@gmail.com](mailto:etomu.joshua@gmail.com)
 - **Obikwelu Chidera Jane** - _Derasine96_ - [chidexobikwelu@gmail.com](mailto:chidexobikwelu@gmail.com)
+
+## License
 
 ## License
 
