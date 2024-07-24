@@ -22,7 +22,6 @@ It allows users to book appointments with lawyers, view profiles, and contact th
   - [Example of TailwindCSS usage](#example-of-tailwindcss-usage)
   - [Authors](#authors)
   - [License](#license)
-  - [License](#license-1)
 
 ## Installation
 
@@ -175,8 +174,6 @@ required
 
 - **Etomu Gbenga Joshua** - _CyberGa_ - [etomu.joshua@gmail.com](mailto:etomu.joshua@gmail.com)
 - **Obikwelu Chidera Jane** - _Derasine96_ - [chidexobikwelu@gmail.com](mailto:chidexobikwelu@gmail.com)
-
-## License
 
 ## License
 
