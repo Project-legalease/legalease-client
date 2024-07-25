@@ -76,6 +76,21 @@ export default function AskALawyer(): React.JSX.Element {
                     </Link>
                   </span>
                 </li>
+                <li>
+                  <span className="text-primary-orange61 font-bold">
+                    Add legal resources too:
+                  </span>{" "}
+                  Discover answers to previously asked questions from
+                  individuals facing similar legal challenges.
+                  <span>
+                    <Link
+                      href="/about/#faqs"
+                      className="text-primary-orange61 underline italic"
+                    >
+                      Visit FAQ&apos;s
+                    </Link>
+                  </span>
+                </li>
               </ul>
               <Form {...form}>
                 <form

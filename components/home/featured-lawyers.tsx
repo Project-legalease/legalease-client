@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const featured: { img: string; desc: string }[] = [
   {
@@ -16,23 +17,23 @@ const featured: { img: string; desc: string }[] = [
     desc: "I was impressed with Mr. Patel’s attention to detail. He meticulously reviewed all documents and left no stone unturned. His thoroughness and precision helped secure a positive outcome for my case.",
   },
   {
-    img: "/images/lawyer-1.jpeg",
+    img: "/images/lawyer-2.jpeg",
+    desc: "Attorney Smith was incredibly knowledgeable and professional throughout my entire case. She explained every step of the process clearly and made sure I understood my options. I felt confident knowing she was handling my case.",
+  },
+  {
+    img: "/images/lawyer-3.png",
+    desc: "Attorney Jane worked tirelessly on my case, even working late hours to ensure everything was perfect. Her dedication and hard work paid off, and I won my case. I highly recommend her to anyone in need of a committed lawyer.",
+  },
+  {
+    img: "/images/lawyer-4.png",
     desc: "I was impressed with Mr. Patel’s attention to detail. He meticulously reviewed all documents and left no stone unturned. His thoroughness and precision helped secure a positive outcome for my case.",
   },
   {
-    img: "/images/lawyer-1.jpeg",
+    img: "/images/lawyer-5.png",
     desc: "I was impressed with Mr. Patel’s attention to detail. He meticulously reviewed all documents and left no stone unturned. His thoroughness and precision helped secure a positive outcome for my case.",
   },
   {
-    img: "/images/lawyer-1.jpeg",
-    desc: "I was impressed with Mr. Patel’s attention to detail. He meticulously reviewed all documents and left no stone unturned. His thoroughness and precision helped secure a positive outcome for my case.",
-  },
-  {
-    img: "/images/lawyer-1.jpeg",
-    desc: "I was impressed with Mr. Patel’s attention to detail. He meticulously reviewed all documents and left no stone unturned. His thoroughness and precision helped secure a positive outcome for my case.",
-  },
-  {
-    img: "/images/lawyer-1.jpeg",
+    img: "/images/lawyer-6.png",
     desc: "I was impressed with Mr. Patel’s attention to detail. He meticulously reviewed all documents and left no stone unturned. His thoroughness and precision helped secure a positive outcome for my case.",
   },
 ];
@@ -84,9 +85,12 @@ function FeaturedLawyers(): React.JSX.Element {
                 >
                   <div className="absolute z-[1] bottom-0 left-0 right-0 bg-black/55 py-6 px-5 text-white text-sm font-medium rounded-t-[20px]">
                     {pathname.startsWith("/lawyers/find") ? (
-                      <button className="w-full px-4 py-4 bg-primary-orange61/85 hover:bg-primary-orange61 text-sm text-white border border-primary-orange61/85 hover:border-primary-orange61 font-medium rounded-lg duration-300">
-                        View Profile
-                      </button>
+                      <Link href={'/profile-page'}>
+                        <button className="w-full px-4 py-4 bg-primary-orange61/85 hover:bg-primary-orange61 text-sm text-white border border-primary-orange61/85 hover:border-primary-orange61 font-medium rounded-lg duration-300">
+                          View Profile
+                        </button>
+                      </Link>
+
                     ) : (
                       <p>{feature.desc}</p>
                     )}

@@ -11,7 +11,7 @@ function Header(): JSX.Element {
   if (
     pathname.startsWith("/login") ||
     pathname.startsWith("/signup") ||
-    pathname.startsWith("/password")
+    pathname.startsWith("/password") 
   ) {
     return <></>;
   }
