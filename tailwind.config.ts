@@ -14,6 +14,7 @@ const config = {
       lilita: ["var(--font-lilita)"],
       inter: ["var(--font-inter)"],
       inria: ["var(--font-inria)"],
+      gorditas: ["var(--font-gorditas)"],
     },
     container: {
       center: true,
@@ -37,6 +38,7 @@ const config = {
           whiteF5: "#FFF7F5",
           dark32: "#323332",
           dark1E: "#1E1E1E",
+          green1D: "#33BA1D",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

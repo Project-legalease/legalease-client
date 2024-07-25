@@ -81,10 +81,7 @@ export default function LoginForm(): React.JSX.Element {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-5 max-w-md sm:max-w-md py-10 w-full px-6 rounded-lg mx-auto fade-in-30"
-      >
+      <form className="space-y-5 max-w-md sm:max-w-md py-10 w-full px-6 rounded-lg mx-auto fade-in-30">
         <div>
           <h2 className="text-3xl text-center text-primary-blue48 font-lilita mt-20">
             WELCOME BACK!
@@ -145,7 +142,7 @@ export default function LoginForm(): React.JSX.Element {
         />
         <div className="flex items-center gap-2 mt-4">
           <button
-            type="submit"
+            onClick={form.handleSubmit(onSubmit)}
             className="w-full px-4 py-2 text-white text-sm bg-primary-orange61/85 rounded-md hover:bg-primary-orange61 duration-300"
           >
             {loading ? "Loading..." : "Login"}

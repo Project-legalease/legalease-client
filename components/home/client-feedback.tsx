@@ -11,26 +11,26 @@ function ClientFeedback() {
   return (
     <div className="px-5 py-[42px]">
       <div className="flex flex-col items-center w-full max-w-[526px] mx-auto">
-        <h1 className="font-lilita text-primary-dark32 text-[2.5em] mt-4">
+        <h1 className="font-lilita text-primary-dark32 text-3xl sm:text-[2.5em] mt-4">
           What Our Clients Say About Us
         </h1>
         <RiDoubleQuotesL size={24} className="text-primary-orange61" />
-        <p className="text-primary-dark1E">
+        <p className="text-primary-dark1E text-sm sm:text-base">
           The secure messaging feature on this platform made communication with
           my lawyer easy and efficient. I appreciated the ability to have
           confidential conversations and receive prompt responses. It made the
           entire process much smoother.
         </p>
         <div className="flex items-center gap-3 mt-3 mb-4">
-          <Avatar className="size-24">
+          <Avatar className="size-16 sm:size-24">
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
             <AvatarFallback>
               <LuUser2 size={20} className="text-primary-dark1E" />
             </AvatarFallback>
           </Avatar>
           <div>
-            <h4 className="text-primary-dark1E text-2xl">Miss Susan Allen</h4>
-            <p className="text-primary-dark1E text-base">Accountant</p>
+            <h4 className="text-primary-dark1E text-base sm:text-2xl">Miss Susan Allen</h4>
+            <p className="text-primary-dark1E text-sm sm:text-base">Accountant</p>
           </div>
         </div>
         <div className="w-fit flex gap-1">

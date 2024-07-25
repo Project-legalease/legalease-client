@@ -3,6 +3,17 @@
 @tailwind utilities;
 
   @layer base {
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1; 
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #32333260; 
+      border-radius: 20px;
+    }
+    
     :root {
       --background: 0 0% 100%;
       --foreground: 222.2 84% 4.9%;
@@ -59,19 +70,20 @@
     }
   }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
+  @layer base {
+    * {
+      @apply border-border;
+      margin: 0;
+      box-sizing: border-box;
+      scroll-behaviour: smooth;
+    }
+    body {
+      @apply bg-background text-foreground;
+      font-family: var(--font-inter);
+    }
+  }
+  @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
-

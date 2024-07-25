@@ -4,7 +4,7 @@ import Copyright from "./copyright";
 
 function AuthSidebar() {
   return (
-    <div className="w-full h-auto">
+    <div className="hidden md:block w-full h-auto">
       <nav className="bg-white">
         <div className="flex items-center justify-between w-full max-w-[460px] h-[100px] mx-auto">
           <SubHeader />

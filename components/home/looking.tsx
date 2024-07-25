@@ -14,14 +14,14 @@ function LookingForLawyer(): React.JSX.Element {
   return (
     <div className="py-10 px-5 mb-10">
       <div className="w-full max-w-[1184px] mx-auto">
-        <h1 className="font-lilita text-primary-blue48 text-[2.5em] text-center">
+        <h1 className="font-lilita text-primary-blue48 text-3xl sm:text-[2.5em] text-center">
           LOOKING FOR A LAWYER?
         </h1>
-        <h6 className="text-primary-dark1E font-extralight italic mb-8 text-center">
+        <h6 className="text-primary-dark1E font-sm sm:text-base font-extralight italic mb-8 text-center">
           Take advantage of LegalEase&#39;s search technology, detailed
           profiles, ratings, and reviews to evaluate and connect with attorneys.
         </h6>
-        <div className="flex gap-6">
+        <div className="flex flex-col  md:flex-row gap-6">
           <div className="w-full">
             {criterias.map((criteria, index) => (
               <div key={index} className="flex items-start gap-4 mb-6">
@@ -31,12 +31,14 @@ function LookingForLawyer(): React.JSX.Element {
                     className="text-primary-orange61 mt-1"
                   />
                 </div>
-                <p className="text-primary-dark1E text-lg mt-2">{criteria}</p>
+                <p className="text-primary-dark1E text-base md:text-lg mt-2">
+                  {criteria}
+                </p>
               </div>
             ))}
             <div className="mt-7 pl-10">
               <Link
-                href="#"
+                href="/lawyers/find"
                 className="py-3 px-4 rounded-lg bg-primary-orange61 font-bold text-white  font-inria"
               >
                 Find A Lawyer
@@ -67,7 +69,7 @@ function LookingForLawyer(): React.JSX.Element {
                 </button>
               </div>
             </div>
-            <div className="rounded-md py-4 px-16 bg-primary-whiteF5 text-primary-blue48">
+            <div className="rounded-md py-4 px-16 text-sm sm:text-base bg-primary-whiteF5 text-primary-blue48">
               <p>
                 <RiDoubleQuotesL size={24} />
                 I was impressed by the range of services offered on this

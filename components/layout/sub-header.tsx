@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import ServicesMenu from "../services/services-menu";
+import LandingMobileNav from "./mobile-nav";
 
 const pages = [
   { name: "About", href: "/about" },
@@ -18,7 +19,7 @@ function SubHeader() {
 
   return (
     <Fragment>
-      <Link href="/">
+      <Link href="/" className="flex items-center gap-2">
         <Image
           src="/images/brand-logo.png"
           alt="LegalEase logo"
@@ -26,8 +27,12 @@ function SubHeader() {
           height={60}
           priority={true}
         />
+        <h1 className="block md:hidden text-2xl md:text-4xl font-semibold text-primary-orange61 font-gorditas">
+          LEGALEASE
+        </h1>
       </Link>
-      <div className="flex items-center gap-6 text-sm">
+       <LandingMobileNav />
+      <div className="hidden md:flex items-center gap-6 text-sm">
         <Link
           href="/"
           className={cn(

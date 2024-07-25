@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Lilita_One, Inria_Sans } from "next/font/google";
+import { Inter, Lilita_One, Inria_Sans, Gorditas } from "next/font/google";
 import "normalize.css/normalize.css";
 import "./globals.css";
-import Header from "@/components/layout/header";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const lilita = Lilita_One({
@@ -19,6 +18,13 @@ const inria = Inria_Sans({
   variable: "--font-inria",
 });
 
+const gorditas = Gorditas({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: "normal",
+  variable: "--font-gorditas",
+});
+
 export const metadata: Metadata = {
   title: "LegalEase",
   description: "Making legal access easy",
@@ -31,12 +37,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <body
-          className={`${inter.variable} ${lilita.variable} ${inria.variable}`}
-        >
-          <Header />
-          {children}
-        </body>
+      <body
+        className={`${inter.variable} ${lilita.variable} ${inria.variable} ${gorditas.variable}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
-const services: { title: string; href: string; description: string }[] = [
+export const services: { title: string; href: string; description: string }[] = [
   {
     title: "Family Law",
     href: "#",
