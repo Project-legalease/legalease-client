@@ -84,10 +84,10 @@ export default function AskALawyer(): React.JSX.Element {
                   individuals facing similar legal challenges.
                   <span>
                     <Link
-                      href="/about/#faqs"
+                      href="/resources"
                       className="text-primary-orange61 underline italic"
                     >
-                      Visit FAQ&apos;s
+                      Add a Legal Content, Resource, or Article
                     </Link>
                   </span>
                 </li>
