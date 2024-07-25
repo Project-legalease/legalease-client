@@ -147,7 +147,7 @@ export default function LoginForm(): React.JSX.Element {
         />
         <div className="flex items-center gap-2 mt-4">
           <button
-            type="button"
+            type="submit"
             className="w-full px-4 py-2 text-white text-sm bg-primary-orange61/85 rounded-md hover:bg-primary-orange61 duration-300"
           >
             {loading ? "Loading..." : "Login"}

@@ -167,9 +167,9 @@ export default function SignupForm(): React.JSX.Element {
   async function onSubmit(
     values: z.infer<typeof formSchema>
   ) {
+    console.log(values);
     setError("");
     setLoading(true);
-    console.log(values);
     try {
       const res = await axios.post("/auth/register", values);
       const result = res.data as DefaultResponse;
@@ -498,7 +498,7 @@ export default function SignupForm(): React.JSX.Element {
           )}
         />
         <div className="flex items-center gap-2 mt-4">
-          <button className="w-full px-4 py-2 text-white text-sm bg-primary-orange61/85 rounded-md hover:bg-primary-orange61 duration-300">
+          <button type="submit" className="w-full px-4 py-2 text-white text-sm bg-primary-orange61/85 rounded-md hover:bg-primary-orange61 duration-300">
             {loading ? "Loading..." : "Signup"}
           </button>
         </div>
