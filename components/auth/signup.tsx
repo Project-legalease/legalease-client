@@ -69,7 +69,10 @@ const formSchema = z.object({
   qualification: z.string({ required_error: "Qualification is required" }).min(1, "Qualifications is required").trim(),
   specialization: z.string({ required_error: "Specialization is required" }).min(1, "Specialization is required").trim(),
   experience: z.string({ required_error: "Experience is required" }).min(1, "Experience is required").trim(),
-  documents: z.any().refine((files) => files.length > 0, "At least one document is required"),
+  documents: z
+    .array(z.any())
+    .optional()
+    .refine((files) => !files || files.length > 0, "At least one document is required if documents are provided"),
   accept: z
     .boolean({
       required_error: "Accept the terms and conditions to use LegalEase",
@@ -378,7 +381,13 @@ export default function SignupForm(): React.JSX.Element {
                 <FormItem>
                   <FormLabel className="text-primary-dark32/80 font-semibold">Documents:</FormLabel>
                   <FormControl>
-                    <input type="file" multiple {...field} className="w-full px-3 py-2 border rounded-md border border-primary-dark32/70" placeholder="Upload your documents" />
+                    <input
+                      type="file"
+                      multiple
+                      {...field}
+                      className="w-full px-3 py-2 border rounded-md border border-primary-dark32/70"
+                      placeholder="Upload your documents"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

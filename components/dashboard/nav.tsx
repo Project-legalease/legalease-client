@@ -67,7 +67,6 @@ export default function DashboardNav(): React.JSX.Element {
             <Image src="/images/brand-logo.png" alt="LegalEase logo" width={40} height={40} priority={true} />
           </div>
         </Link>
-
         <h1 className="text-2xl font-semibold text-primary-orange61 font-gorditas">LEGALEASE</h1>
       </div>
       <div className="w-full flex md:hidden items-center justify-end gap-4 p-5">
