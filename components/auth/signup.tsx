@@ -27,6 +27,10 @@ import { z } from "zod";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useSearchParams } from "next/navigation";
+import axios from "@/lib/axios";
+import { AxiosError } from "axios";
+import { useRouter } from "next/navigation"
+import DefaultResponse from "@/definitions/response.interface";
 
 const userTypes: ["user", "lawyer"] = ["user", "lawyer"];
 
@@ -120,6 +124,8 @@ const formSchema = z.object({
 export default function SignupForm(): React.JSX.Element {
   const query = useSearchParams();
   const role = query.get("role");
+  const router = useRouter()
+
   console.log(role);
   const validatedRole =
     typeof role === "string" && (role === "user" || role === "lawyer")
@@ -163,25 +169,24 @@ export default function SignupForm(): React.JSX.Element {
     setError("");
     setLoading(true);
     console.log(values);
-    //   try {
-    //     const res = await axios.post("/auth/login", values);
-    //     if (res.status === 200) {
-    //       await signIn("credentials", {
-    //         ...values,
-    //         redirect: true,
-    //         redirectTo: "/dashboard",
-    //       });
+    try {
+      const res = await axios.post("/auth/register", values);
+      const result = res.data as DefaultResponse;
 
-    //       toast.success("Successfully login!");
-    //       setLoading(false);
-    //     }
-    //     setLoading(false);
-    //   } catch (err: Error | AxiosError | any) {
-    //     if (err.response && err.response.status > 400) {
-    //       setError(err.response.data.error);
-    //     }
-    //     setLoading(false);
-    //   }
+      if (result.status == 200) {
+        setLoading(false);
+        console.log(result.data);
+        router.push('/login')
+      } else {
+        setError(result.message ?? "");
+      }
+    } catch (err: Error | AxiosError | any) {
+      if (err.response && err.response.status > 400) {
+        setError(err.response.data.error);
+      }
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
