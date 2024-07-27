@@ -38,9 +38,12 @@ function Intro() {
                     className="w-full h-5 placeholder:text-black/50 text-primary-dark32 focus-visible:outline-none focus:outline-none"
                   />
                 </div>
-                <button className="w-fit px-4 py-2 bg-white text-sm text-primary-orange61 font-inter font-medium rounded-full">
-                  Search
-                </button>
+                <Link href={'/lawyers/find'}>
+                  <button className="w-fit px-4 py-2 bg-white text-sm text-primary-orange61 font-inter font-medium rounded-full">
+                    Search
+                  </button>
+                </Link>
+
               </div>
             </div>
           </div>

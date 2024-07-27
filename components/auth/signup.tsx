@@ -4,22 +4,8 @@ import React, { useState } from "react";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { TbAlertCircle } from "react-icons/tb";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -69,26 +55,11 @@ const qualifications = [
 ];
 
 const formSchema = z.object({
-  name: z
-    .string({ required_error: "Name is required" })
-    .min(1, "Name is required")
-    .trim(),
-  firstName: z
-    .string({ required_error: "First name is required" })
-    .min(1, "First name is required")
-    .trim(),
-  lastName: z
-    .string({ required_error: "Last name is required" })
-    .min(1, "Last name is required")
-    .trim(),
-  username: z
-    .string({ required_error: "Username is required" })
-    .min(1, "Username is required")
-    .trim(),
-  email: z
-    .string({ required_error: "Email is required" })
-    .min(1, "Email is required")
-    .email({ message: "Invalid email address" }),
+  name: z.string({ required_error: "Name is required" }).min(1, "Name is required").trim(),
+  firstName: z.string({ required_error: "First name is required" }).min(1, "First name is required").trim(),
+  lastName: z.string({ required_error: "Last name is required" }).min(1, "Last name is required").trim(),
+  username: z.string({ required_error: "Username is required" }).min(1, "Username is required").trim(),
+  email: z.string({ required_error: "Email is required" }).min(1, "Email is required").email({ message: "Invalid email address" }),
   password: z
     .string({ required_error: "Password is required" })
     .min(1, "Password is required")
@@ -99,18 +70,13 @@ const formSchema = z.object({
     .min(1, "Password is required")
     .min(8, "Password must be more than 8 characters")
     .max(32, "Password must be less than 32 characters"),
-  qualification: z
-    .string({ required_error: "Qualification is required" })
-    .min(1, "Qualifications is required")
-    .trim(),
-  specialization: z
-    .string({ required_error: "Specialization is required" })
-    .min(1, "Specialization is required")
-    .trim(),
-  experience: z
-    .string({ required_error: "Experience is required" })
-    .min(1, "Experience is required")
-    .trim(),
+  qualification: z.string({ required_error: "Qualification is required" }).min(1, "Qualifications is required").trim(),
+  specialization: z.string({ required_error: "Specialization is required" }).min(1, "Specialization is required").trim(),
+  experience: z.string({ required_error: "Experience is required" }).min(1, "Experience is required").trim(),
+  documents: z
+    .array(z.any())
+    .optional()
+    .refine((files) => !files || files.length > 0, "At least one document is required if documents are provided"),
   accept: z
     .boolean({
       required_error: "Accept the terms and conditions to use LegalEase",
@@ -132,9 +98,7 @@ export default function SignupForm(): React.JSX.Element {
       : "user";
   const [userType, setUserType] = useState<"user" | "lawyer">(validatedRole);
   const [error, setError] = useState("");
-  const [pwdInputType, setPwdInputType] = useState<"password" | "text">(
-    "password"
-  );
+  const [pwdInputType, setPwdInputType] = useState<"password" | "text">("password");
   const [loading, setLoading] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -148,6 +112,7 @@ export default function SignupForm(): React.JSX.Element {
       qualification: "",
       specialization: "",
       experience: "",
+      documents: [],
       username: "",
       passwordConfirmation: "",
       accept: false,
@@ -197,12 +162,8 @@ export default function SignupForm(): React.JSX.Element {
         className="space-y-5 max-w-md sm:max-w-md py-10 w-full px-6 rounded-lg mx-auto fade-in-30"
       >
         <div>
-          <h2 className="text-3xl text-center text-primary-blue48 font-lilita mt-20">
-            CREATE YOUR ACCOUNT
-          </h2>
-          <p className="mt-0 text-center text-primary-dark32 italic font-normal text-sm">
-            Signup to get a LegalEase profile
-          </p>
+          <h2 className="text-3xl text-center text-primary-blue48 font-lilita mt-20">CREATE YOUR ACCOUNT</h2>
+          <p className="mt-0 text-center text-primary-dark32 italic font-normal text-sm">Signup to get a LegalEase profile</p>
           <div className="flex gap-2 p-1 rounded-md bg-white border border-primary-orange61 mt-4">
             {userTypes.map((user, index) => (
               <button
@@ -211,11 +172,8 @@ export default function SignupForm(): React.JSX.Element {
                 onClick={() => setUserType(user)}
                 className={cn(
                   "w-full capitalize px-4 py-2 text-sm rounded-md duration-300",
-                  userType == user
-                    ? "bg-primary-orange61 text-white"
-                    : "bg-transparent text-primary-dark32"
-                )}
-              >
+                  userType == user ? "bg-primary-orange61 text-white" : "bg-transparent text-primary-dark32"
+                )}>
                 {user}
               </button>
             ))}
@@ -234,9 +192,7 @@ export default function SignupForm(): React.JSX.Element {
               name="firstName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-primary-dark32/80 font-normal">
-                    First name
-                  </FormLabel>
+                  <FormLabel className="text-primary-dark32/80 font-normal">First name</FormLabel>
                   <FormControl>
                     <input
                       placeholder="Your name"
@@ -253,9 +209,7 @@ export default function SignupForm(): React.JSX.Element {
               name="lastName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-primary-dark32/80 font-normal">
-                    Last name
-                  </FormLabel>
+                  <FormLabel className="text-primary-dark32/80 font-normal">Last name</FormLabel>
                   <FormControl>
                     <input
                       placeholder="Your family name"
@@ -272,9 +226,7 @@ export default function SignupForm(): React.JSX.Element {
               name="username"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-primary-dark32/80 font-normal">
-                    Username
-                  </FormLabel>
+                  <FormLabel className="text-primary-dark32/80 font-normal">Username</FormLabel>
                   <FormControl>
                     <input
                       placeholder="Your display name"
@@ -293,9 +245,7 @@ export default function SignupForm(): React.JSX.Element {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-primary-dark32/80 font-normal">
-                  Name
-                </FormLabel>
+                <FormLabel className="text-primary-dark32/80 font-normal">Name</FormLabel>
                 <FormControl>
                   <input
                     placeholder="e.g. John Doe"
@@ -313,9 +263,7 @@ export default function SignupForm(): React.JSX.Element {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-primary-dark32/80 font-normal">
-                Email
-              </FormLabel>
+              <FormLabel className="text-primary-dark32/80 font-normal">Email</FormLabel>
               <FormControl>
                 <input
                   placeholder="e.g. email@example.com"
@@ -332,9 +280,7 @@ export default function SignupForm(): React.JSX.Element {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-primary-dark32/80 font-normal">
-                Password
-              </FormLabel>
+              <FormLabel className="text-primary-dark32/80 font-normal">Password</FormLabel>
               <FormControl>
                 <input
                   type={pwdInputType}
@@ -354,9 +300,7 @@ export default function SignupForm(): React.JSX.Element {
           name="passwordConfirmation"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-primary-dark32/80 font-normal">
-                Confirm your password
-              </FormLabel>
+              <FormLabel className="text-primary-dark32/80 font-normal">Confirm your password</FormLabel>
               <FormControl>
                 <input
                   type={pwdInputType}
@@ -367,9 +311,7 @@ export default function SignupForm(): React.JSX.Element {
                   onKeyUp={keyUpHandler}
                 />
               </FormControl>
-              <p className="text-xs text-primary-dark1E/60">
-                Hold Ctrl to display your password temporarily.
-              </p>
+              <p className="text-xs text-primary-dark1E/60">Hold Ctrl to display your password temporarily.</p>
               <FormMessage />
             </FormItem>
           )}
@@ -381,13 +323,8 @@ export default function SignupForm(): React.JSX.Element {
               name="qualification"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-primary-dark32/80 font-normal">
-                    Qualifications
-                  </FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
+                  <FormLabel className="text-primary-dark32/80 font-normal">Qualifications</FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder="Select a qualification" />
@@ -395,10 +332,7 @@ export default function SignupForm(): React.JSX.Element {
                     </FormControl>
                     <SelectContent>
                       {qualifications.map((qualification) => (
-                        <SelectItem
-                          key={qualification.value}
-                          value={qualification.value}
-                        >
+                        <SelectItem key={qualification.value} value={qualification.value}>
                           {qualification.label}
                         </SelectItem>
                       ))}
@@ -414,13 +348,8 @@ export default function SignupForm(): React.JSX.Element {
               name="specialization"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-primary-dark32/80 font-normal">
-                    Specialization
-                  </FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
+                  <FormLabel className="text-primary-dark32/80 font-normal">Specialization</FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder="Select a specialization" />
@@ -428,10 +357,7 @@ export default function SignupForm(): React.JSX.Element {
                     </FormControl>
                     <SelectContent>
                       {specializations.map((specialization) => (
-                        <SelectItem
-                          key={specialization.value}
-                          value={specialization.value}
-                        >
+                        <SelectItem key={specialization.value} value={specialization.value}>
                           {specialization.label}
                         </SelectItem>
                       ))}
@@ -447,14 +373,32 @@ export default function SignupForm(): React.JSX.Element {
               name="experience"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-primary-dark32/80 font-semibold">
-                    Experience:
-                  </FormLabel>
+                  <FormLabel className="text-primary-dark32/80 font-semibold">Experience:</FormLabel>
                   <FormControl>
                     <textarea
                       placeholder="Describe your experience"
                       {...field}
                       className="w-full h-32 py-2 resize-none rounded-md placeholder:text-black/50 placeholder:text-sm placeholder:font-normal px-5 text-primary-dark32 border border-primary-dark32/70 focus-visible:outline-none focus:outline-none"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="documents"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-primary-dark32/80 font-semibold">Documents:</FormLabel>
+                  <FormControl>
+                    <input
+                      type="file"
+                      multiple
+                      {...field}
+                      className="w-full px-3 py-2 border rounded-md border border-primary-dark32/70"
+                      placeholder="Upload your documents"
                     />
                   </FormControl>
                   <FormMessage />
@@ -472,21 +416,13 @@ export default function SignupForm(): React.JSX.Element {
             <FormItem className="rounded-md border p-4">
               <FormItem className="flex flex-row items-start space-x-3 space-y-0 ">
                 <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                  />
+                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <div className="space-y-1 leading-none">
-                  <FormLabel className="text-primary-dark32/80 font-medium">
-                    Accept terms and conditions
-                  </FormLabel>
+                  <FormLabel className="text-primary-dark32/80 font-medium">Accept terms and conditions</FormLabel>
                   <FormDescription className="text-primary-dark32/80 font-light">
                     By creating an account, you agree to{" "}
-                    <Link
-                      href="#"
-                      className="underline decoration-primary-dark1E/20 hover:decoration-primary-dark32 font-medium duration-300"
-                    >
+                    <Link href="#" className="underline decoration-primary-dark1E/20 hover:decoration-primary-dark32 font-medium duration-300">
                       Terms of Services
                     </Link>
                     . We&#39;ll occassionally send account related emails.
@@ -505,9 +441,7 @@ export default function SignupForm(): React.JSX.Element {
         <div className="font-inria">
           <div className="flex items-center my-10">
             <hr className="w-full" />
-            <p className="w-full text-center text-primary-dark32/80 text-sm font-normal mx-2">
-              or continue with
-            </p>
+            <p className="w-full text-center text-primary-dark32/80 text-sm font-normal mx-2">or continue with</p>
             <hr className="w-full" />
           </div>
           <div className="grid gap-2 grid-cols-2">
